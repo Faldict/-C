@@ -1,8 +1,5 @@
 #!/usr/bin/env python
 
-__author__ = "Wang Jialu"
-__date__ = "2016-09-22"
-
 import Queue
 import threading
 import time
@@ -17,7 +14,9 @@ import string
 q = Queue.Queue()
 threadLock = threading.Lock()
 crawled = []
+threads = []
 count = 0
+exitFlag = 0
 
 
 class myThread (threading.Thread):
@@ -29,6 +28,7 @@ class myThread (threading.Thread):
 #		self.count = max_page
 
 	def run(self):
+		print str(self.threadID) + "is running"
 		crawl()
 		
 
@@ -79,26 +79,42 @@ def add_page_to_folder(page, content):
 	f.close
 
 def crawl():
-	if count > 1000:
-		return
-	if q.empty():
-		time.sleep(1)
-		crawl()
-	else:
-		threadLock.acquire()
-		url = q.get()
-		q.pop()
-		threadLock.release()
-		if url in crawled:
-			crawl()
+	global count
+	while not exitFlag:
+		if q.empty():
+			time.sleep(1)
 		else:
-			content = get_page(url)
-			add_page_to_folder(url, content)
-			links = get_all_links(url)
-			union_queue(q, links)
-			crawled.append(url)
-			count += 1
+			threadLock.acquire()
+			url = q.get()
+			threadLock.release()
+			if url in crawled:
+				pass
+			else:
+				print "Crawling" + url
+				content = get_page(url)
+				add_page_to_folder(url, content)
+				links = get_all_links(content, url)
+				union_queue(q, links)
+				crawled.append(url)
+				count += 1
 
+
+def main():
+	print "main thread is running"
+	q.put("http://www.sjtu.edu.cn")
+	thread1 = myThread(1)
+	threads.append(thread1)
+	thread1.start()
+
+	thread2 = myThread(2)
+	thread2.start()
+	threads.append(thread2)
+	while count < 1000:
+		pass
+	exitFlag = 1
+	print "Exiting Main Thread"
+
+main()
 
 
 
