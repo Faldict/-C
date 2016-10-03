@@ -9,7 +9,7 @@ __author__ = "Faldict"
 __date__ = "$2016-9-19$"
 __version__ = '1.1.0'
 
-distance = 8.57
+distance = 6.16
 speed = 3201
 stopTime = int(time.time() * 1000)
 startTime = stopTime - speed * 1000
