@@ -80,7 +80,7 @@ def add_page_to_folder(page, content):
 
 def crawl():
 	global count
-	while not exitFlag:
+	while not exitFlag and (not q.empty() and count > 1):
 		if q.empty():
 			time.sleep(1)
 		else:
