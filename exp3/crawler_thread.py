@@ -80,7 +80,7 @@ def add_page_to_folder(page, content):
 
 def crawl():
 	global count
-	while not exitFlag and (not q.empty() and count > 1):
+	while count < 1000 and (not q.empty() and count > 1):
 		if q.empty():
 			time.sleep(1)
 		else:
@@ -102,15 +102,11 @@ def crawl():
 def main():
 	print "main thread is running"
 	q.put("http://www.sjtu.edu.cn")
-	thread1 = myThread(1)
-	threads.append(thread1)
-	thread1.start()
-
-	thread2 = myThread(2)
-	thread2.start()
-	threads.append(thread2)
-	while count < 1000:
-		pass
+    for i in range(4):
+        t = myThread(i)
+        threads.append(t)
+        t.start()
+    q.join()
 	exitFlag = 1
 	print "Exiting Main Thread"
 
