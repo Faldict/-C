@@ -166,8 +166,40 @@ for i in range(NUM):
 for i in range(JOBS):
 	q.put(i)
 
-q.join()
+for i in range(NUM):
+	threads[i].join()
 ```
+
+To use **Threading** we should define a class:
+
+```
+import threading
+
+class MyThread(threading.Thread):
+	def __init__(self,func,args,name='')
+		threading.Thread.__init__(self)
+		self.name=name
+		self.func=func
+		self.args=args
+	
+	def getResult(self):
+		return self.res
+	
+	def run(self):
+		print 'starting', self.name
+		self.res = apply(self.func, self,args)
+		print self.name, 'finished'
+```
+And the use of some functions in **Queue** are listed:
+
+```
+Queue.qsize()    # return the size of queue
+Queue.empty()    # return true if the queue is empty, else return false
+Queue.put(item)      # put item into queue
+Queue.get()          # get out of an item from queue
+```
+
+You should remember Queue is **FIFO**.
 
 One important problem bothering me for a long time is that when to kill the thread. The easiest method is to count the pages the crawler fetched. But what if the pages in the queue are all crawled? So if the queue is empty and it is not the first page considering the seed URL, also kill the thread.
 
