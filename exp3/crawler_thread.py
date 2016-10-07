@@ -30,6 +30,7 @@ class myThread (threading.Thread):
 	def run(self):
 		print str(self.threadID) + "is running"
 		crawl()
+        print self.threadID, "end"
 		
 
 def valid_filename(s):
@@ -106,9 +107,9 @@ def main():
         t = myThread(i)
         threads.append(t)
         t.start()
-    q.join()
-	exitFlag = 1
-	print "Exiting Main Thread"
+    for i in range(4):
+        threads[i].join()
+	print "Exit Main Thread"
 
 main()
 
