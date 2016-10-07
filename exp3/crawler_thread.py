@@ -30,7 +30,7 @@ class myThread (threading.Thread):
 	def run(self):
 		print str(self.threadID) + "is running"
 		crawl()
-        print self.threadID, "end"
+		print self.threadID, "end"
 		
 
 def valid_filename(s):
@@ -103,15 +103,12 @@ def crawl():
 def main():
 	print "main thread is running"
 	q.put("http://www.sjtu.edu.cn")
-    for i in range(4):
-        t = myThread(i)
-        threads.append(t)
-        t.start()
-    for i in range(4):
-        threads[i].join()
+	for i in range(4):
+		t = myThread(i)
+		threads.append(t)
+		t.start()
+	for i in range(4):
+		threads[i].join()
 	print "Exit Main Thread"
 
 main()
-
-
-
