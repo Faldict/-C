@@ -81,7 +81,7 @@ def add_page_to_folder(page, content):
 
 def crawl():
 	global count
-	while count < 1000 and (not q.empty() and count > 1):
+	while count < 1000 and ((not q.empty() and count > 1) or count < 2):
 		if q.empty():
 			time.sleep(1)
 		else:
