@@ -203,6 +203,10 @@ You should remember Queue is **FIFO**.
 
 One important problem bothering me for a long time is that when to kill the thread. The easiest method is to count the pages the crawler fetched. But what if the pages in the queue are all crawled? So if the queue is empty and it is not the first page considering the seed URL, also kill the thread.
 
+When I run my crawler, a *UnicodeEncodeError* came up. I think it was because of the irregular website.
+
+**BeautifulSoup** is easy but too slow. I recommend **lxml** to parse url, which is 100 times faster. More brutely, you can use **regex** directly, 1000 times faster than BeautifulSoup.
+
 The exercise 2 code can be seen in the attachment.
 
 
