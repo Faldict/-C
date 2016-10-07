@@ -3,21 +3,22 @@ class Bitarray:
     def __init__(self, size):
         """ Create a bit array of a specific size """
         self.size = size
-        self.bitarray = bytearray(size/8)
+        self.bitarray = bytearray(size / 8)
 
     def set(self, n):
         """ Sets the nth element of the bitarray """
-
+        n = n % self.size
         index = n / 8
         position = n % 8
         self.bitarray[index] = self.bitarray[index] | 1 << (7 - position)
 
     def get(self, n):
         """ Gets the nth element of the bitarray """
-        
+        n = n % self.size
         index = n / 8
         position = n % 8
-        return (self.bitarray[index] & (1 << (7 - position))) > 0 
+        return (self.bitarray[index] & (1 << (7 - position))) > 0
+
 
 if __name__ == "__main__":
     bitarray_obj = Bitarray(32000)

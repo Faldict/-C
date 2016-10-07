@@ -2,18 +2,20 @@
 from Bitarray import Bitarray
 from GeneralHashFunctions import RSHash, JSHash, PJWHash, BKDRHash
 
-bit_map = Bitarray(32000)
+class BloomFilter():
+	def __init__(self, size):
+		self.bit_map = Bitarray(size)
 
-def BloomFilter(s):
-	h1 = RSHash(s)
-	h2 = JSHash(s)
-	h3 = PJWHash(s)
-	h4 = BKDRHash(s)
-	if bit_map.get(h1) and bit_map.get(h2) and bit_map.get(h3) and bit_get(h4):
-		bit_map.set(h1)
-		bit_map.set(h2)
-		bit_map.set(h3)
-		bit_map.set(h4)
-		return True
-	else:
-		return False
+	def BloomFilter(self, s):
+		h1 = RSHash(s)
+		h2 = JSHash(s)
+		h3 = PJWHash(s)
+		h4 = BKDRHash(s)
+		if not (self.bit_map.get(h1) and self.bit_map.get(h2) and self.bit_map.get(h3) and self.bit_map.get(h4)):
+			self.bit_map.set(h1)
+			self.bit_map.set(h2)
+			self.bit_map.set(h3)
+			self.bit_map.set(h4)
+			return True
+		else:
+			return False

@@ -121,11 +121,13 @@ class Bitarray:
         return (self.bitarray[index] & (1 << (7 - position))) > 0 
 ```
 
-Here we just use bit operation to change the value of a bit to 1. The expression `1 << (7 - position)` represent the bit of the *position*.
+Here we just use bit operation to change the value of a bit to 1. The expression `1 << (7 - position)` represent the bit of the *position*. And we use the **BitArray of size** as the base data structure.
 
-The hash functions used in a Bloom filter should be independent and uniformly distributed. They should also be as fast as possible.
+```
+bit_map = BitArray(size)
+```
 
-We use k hash function, so we should calculate each value hash function for the keyword. If all of them are 1, *may be* it exists. But one of them is not 1, it's definitely not stored.   
+The hash functions used in a Bloom filter should be independent and uniformly distributed. They should also be as fast as possible. We use k hash function, so we should calculate each value hash function for the keyword. If all of them are 1, *may be* it exists. But one of them is not 1, it's definitely not stored.   
 
 ```
 def BloomFilter(s):
@@ -133,7 +135,7 @@ def BloomFilter(s):
 	h2 = hash2(s)
 	h3 = hash3(s)
 	h4 = hash4(s)
-	if bit_map.get(h1) and bit_map.get(h2) and bit_map.get(h3) and bit_get(h4):
+	if not(bit_map.get(h1) and bit_map.get(h2) and bit_map.get(h3) and bit_get(h4)):
 		bit_map.set(h1)
 		bit_map.set(h2)
 		bit_map.set(h3)
@@ -152,6 +154,45 @@ We can change hash function to improve the result.
 Also, k, the number of hash functions makes a difference. Gnerally, `k = ln(2) * m/n`.
 
 The complete code of exercise 1 is in attachment. 
+
+### Check the correct rate
+
+When you finish all the things, you should desigh a experiment to check your **correct rate** of BloomFilter.  
+
+I consider comparing the numbers of words in a text between using *directionary* and *BloomFilter*. Here's my code.
+
+```
+def merge(s, l):
+    for i in l:
+        if i not in s:
+            s.append(i)
+
+
+def calc1():
+    fo = open('pg1661.txt', 'r')
+    reads = []
+    for i in range(10000):
+        s = fo.readline()
+        l = s.split(' ')
+        merge(reads, l)
+    return len(reads)
+
+
+def calc2():
+    fo = open('pg1661.txt', 'r')
+    count = 0
+    reads = BloomFilter(32000)
+    for i in range(10000):
+        s = fo.readline()
+        l = s.split(' ')
+        for i in l:
+            count += reads.BloomFilter(i)
+    return count
+
+```
+
+To my delight, two results are 14312 and 11816, about 80%. I think it is a little low. But when I add the BloomFilter's size up to 3200000, two results are equal. This time it spent too much space. Finally BloomFilter of size 320000 is perfect. Two results are 14312 and 11816. It is fast and don't waste space.
+
 
 ## Concurrent Programming
 
