@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<!--[if IE 6]><html class="ie lt-ie8"><![endif]-->
+<!--[if IE 7]><html class="ie lt-ie8"><![endif]-->
+<!--[if IE 8]><html class="ie ie8"><![endif]-->
+<!--[if IE 9]><html class="ie ie9"><![endif]-->
+<!--[if !IE]><!--> <html> <!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"1255494d3a","applicationID":"15702971","transactionName":"e1daR0JWVV9RER9ZWkxdRxxDUVZE","queueTime":13,"applicationTime":58,"agent":""}</script>
+<script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[(new Date).getTime()].concat(u(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(2),u=t(3),c=t("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var s=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],p="api-",l=p+"ixn-";a(s,function(t,e){f[e]=o(p+e,!0,"api")}),f.addPageAction=o(p+"addPageAction",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var d=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[Date.now(),t,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{c.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){d[e]=o(l+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,(new Date).getTime()])}},{}],2:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],3:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?u(t,a,i):i()}function n(n,r,o){t&&t(n,r,o);for(var i=e(o),a=l(n),u=a.length,c=0;c<u;c++)a[c].apply(i,r);var s=f[m[n]];return s&&s.push([w,n,r,i]),i}function p(t,e){g[t]=l(t).concat(e)}function l(t){return g[t]||[]}function d(t){return s[t]=s[t]||o(n)}function v(t,e){c(t,function(t,n){e=e||"feature",m[n]=e,e in f||(f[e]=[])})}var g={},m={},w={on:p,emit:n,get:d,listeners:l,context:e,buffer:v};return w}function i(){return new r}var a="nr@context",u=t("gos"),c=t(2),f={},s={},p=e.exports=o();p.backlog=f},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!h++){var t=y.info=NREUM.info,e=s.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){c(m,function(e,n){t[e]||(t[e]=n)});var n="https"===g.split(":")[0]||t.sslForHttp;y.proto=n?"https://":"http://",u("mark",["onload",a()],null,"api");var r=s.createElement("script");r.src=y.proto+t.agent,e.parentNode.insertBefore(r,e)}}}function o(){"complete"===s.readyState&&i()}function i(){u("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var u=t("handle"),c=t(2),f=window,s=f.document,p="addEventListener",l="attachEvent",d=f.XMLHttpRequest,v=d&&d.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:d,REQ:f.Request,EV:f.Event,PR:f.Promise,MO:f.MutationObserver},t(1);var g=""+location,m={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-974.min.js"},w=d&&v&&v[p]&&!/CriOS/.test(navigator.userAgent),y=e.exports={offset:a(),origin:g,features:{},xhrWrappable:w};s[p]?(s[p]("DOMContentLoaded",i,!1),f[p]("load",r,!1)):(s[l]("onreadystatechange",o),f[l]("onload",r)),u("mark",["firstbyte",a()],null,"api");var h=0},{}]},{},["loader"]);</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="description"  content="经常有朋友写邮件或发推问我，想从事设计，希望推荐几本书。老回邮件也麻烦，我干脆在做一个书单。我读过的，认为值得入门者和高阶者一读的书。按由浅到深，必读到可读的顺序。主要关注方向是UI、视觉传达、WEB设计，以及历史、理论、常见工具入门教程。 用了半个上午写的，比较仓促，不够全面，也有个人偏好在里面。 我会保持修订和更新这份书列。 如果你仅仅是对设计感兴趣，没有那么多时间读大部头，那么精简版是：1，2，3，5，9，11，12，17，24 如果你是一个工程师或程序员，想做点web设计，精简版是：1，2，3，10，11，27 （不考虑工具的使用） 书单：想做设计师？ 全部图书(34) 1.写给...">
+  <meta property="wb:webmaster" content="294ec9de89e7fadb" />
+  <meta property="qc:admins" content="104102651453316562112116375" />
+  <meta property="qc:admins" content="11635613706305617" />
+  <meta property="qc:admins" content="1163561616621163056375" />
+  <meta name="google-site-verification" content="cV4-qkUJZR6gmFeajx_UyPe47GW9vY6cnCrYtCHYNh4" />
+  <meta name="google-site-verification" content="HF7lfF8YEGs1qtCE-kPml8Z469e2RHhGajy6JPVy5XI" />
+  <meta http-equiv="mobile-agent" content="format=html5; url=http://www.jianshu.com/p/f4bc96e5cf32">
+    <!--  Meta for Smart App Banner -->
+  <meta name="apple-itunes-app" content="app-id=888237539, app-argument=jianshu://notes/6278768">
+  <!-- End -->
+
+  <!--  Meta for Twitter Card -->
+  <meta content="summary" property="twitter:card">
+  <meta content="@jianshucom" property="twitter:site">
+  <meta content="33本适合设计师看的好书 别说你一本没看过！" property="twitter:title">
+  <meta content="经常有朋友写邮件或发推问我，想从事设计，希望推荐几本书。老回邮件也麻烦，我干脆在做一个书单。我读过的，认为值得入门者和高阶者一读的书。按由浅到深，必读到可读的顺序。主要关注方向是UI、视觉传达、WEB设计，以及历史、理论、常见工具入门教程。 用了半个上午写的，比较仓促，不够全面，也有个人偏好在里面。 我会保持修订和更新这份书列。 如果你仅仅是对设计感兴趣，没有那么多时间读大部头，那么精简版是：1，2，3，5，9，11，12，17，24 如果你是一个工程师或程序员，想做点web设计，精简版是：1，2，3，10，11，27 （不考虑工具的使用） 书单：想做设计师？ 全部图书(34) 1.写给..." property="twitter:description">
+  <meta content="http://www.jianshu.com/p/f4bc96e5cf32" property="twitter:url">
+  <!-- End -->
+
+  <!--  Meta for OpenGraph -->
+  <meta property="fb:app_id" content="865829053512461">
+  <meta property="og:site_name" content="简书">
+  <meta property="og:title" content="33本适合设计师看的好书 别说你一本没看过！">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="http://www.jianshu.com/p/f4bc96e5cf32">
+  <meta property="og:description" content="经常有朋友写邮件或发推问我，想从事设计，希望推荐几本书。老回邮件也麻烦，我干脆在做一个书单。我读过的，认为值得入门者和高阶者一读的书。按由浅到深，必读到可读的顺序。主要关注方向是UI、视觉传达、...">
+  <!-- End -->
+
+  <!--  Meta for Facebook Applinks -->
+  <meta property="al:ios:url" content="jianshu://notes/6278768" />
+  <meta property="al:ios:app_store_id" content="888237539" />
+  <meta property="al:ios:app_name" content="简书" />
+
+  <meta property="al:android:url" content="jianshu://notes/6278768" />
+  <meta property="al:android:package" content="com.jianshu.haruki" />
+  <meta property="al:android:app_name" content="简书" />
+  <!-- End -->
+
+  <title>33本适合设计师看的好书 别说你一本没看过！ - 简书</title>
+  <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="UFaggKxjRr7c18KJWVeqDSJFUDFrdiztDtjoOtDwfOxwXKtdebVr7SnRTn5ntbEXTASGeMsxpQYhJImGAzisUw==" />
+  <!--[if lte IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <link rel="stylesheet" media="all" href="http://cdn-qn0.jianshu.io/assets/base-fcbb465e0d570eff94222aef0113921f.css" />
+
+    <link rel="stylesheet" media="all" href="http://cdn-qn0.jianshu.io/assets/reading-note-cf8cd3159d6a16989a79274ab0963d55.css" />
+  <link rel="stylesheet" media="all" href="http://cdn-qn0.jianshu.io/assets/base-read-mode-9b4a364d3a94a577397974de707192a5.css" />
+  <script src="http://cdn-qn0.jianshu.io/assets/modernizr-613ea63b5aa2f0e2a1946e9c28c8eedb.js"></script>
+  <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+  <!--[if IE 8]><link rel="stylesheet" media="all" href="http://cdn-qn0.jianshu.io/assets/scaffolding/for_ie-7f1c477ffedc13c11315103e8787dc6c.css" /><![endif]-->
+  <!--[if lt IE 9]><link rel="stylesheet" media="all" href="http://cdn-qn0.jianshu.io/assets/scaffolding/for_ie-7f1c477ffedc13c11315103e8787dc6c.css" /><![endif]-->
+  <link href="http://baijii-common.b0.upaiyun.com/icons/favicon.ico" rel="icon">
+      <link rel="apple-touch-icon-precomposed" href="http://cdn-qn0.jianshu.io/assets/apple-touch-icons/57-b426758a1fcfb30486f20fd073c3b8ec.png" sizes="57x57" />
+      <link rel="apple-touch-icon-precomposed" href="http://cdn-qn0.jianshu.io/assets/apple-touch-icons/72-feca4b183b9d29fd188665785dc7a7f1.png" sizes="72x72" />
+      <link rel="apple-touch-icon-precomposed" href="http://cdn-qn0.jianshu.io/assets/apple-touch-icons/76-ba757f1ad3421192ce7192170393d2b0.png" sizes="76x76" />
+      <link rel="apple-touch-icon-precomposed" href="http://cdn-qn0.jianshu.io/assets/apple-touch-icons/114-8dae53b3bcea3f06bb139e329d1edab3.png" sizes="114x114" />
+      <link rel="apple-touch-icon-precomposed" href="http://cdn-qn0.jianshu.io/assets/apple-touch-icons/120-fa315ee0177dba4c55d4f66d4129b47f.png" sizes="120x120" />
+      <link rel="apple-touch-icon-precomposed" href="http://cdn-qn0.jianshu.io/assets/apple-touch-icons/152-052f5799bec8fb3aa624bdc72ef5bd1d.png" sizes="152x152" />
+
+</head>
+
+<body class="post output zh cn reader-day-mode reader-font2" data-js-module="note-show" data-locale="zh-CN">
+  
+  <div class="navbar navbar-jianshu shrink">
+  <div class="dropdown">
+    <a class="dropdown-toggle logo" id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="javascript:void(0)">
+      简
+    </a>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+      <li><a href="/"><i class="fa fa-home"></i> 首页</a></li>
+      <li><a href="/collections"><i class="fa fa-th"></i> 专题</a></li>
+    </ul>
+  </div>
+</div>
+<div class="navbar-user">
+    <a class="login" data-signup-link="true" data-toggle="modal" href="/sign_up">
+      <i class="fa fa-user"></i> 注册
+</a>    <a class="login" data-signin-link="true" data-toggle="modal" href="/sign_in">
+      <i class="fa fa-sign-in"></i> 登录
+</a>    <a class="daytime set-view-mode pull-right" href="javascript:void(0)"><i class="fa fa-moon-o"></i></a>
+</div>
+<div class="navbar navbar-jianshu expanded">
+  <div class="dropdown">
+      <a class="active logo" role="button" data-original-title="个人主页" data-container="div.expanded" href="/">
+        <b>简</b><i class="fa fa-home"></i><span class="title">首页</span>
+</a>      <a data-toggle="tooltip" data-placement="right" data-original-title="专题" data-container="div.expanded" href="/collections">
+        <i class="fa fa-th"></i><span class="title">专题</span>
+</a>    <a class="ad-selector" href="/apps">
+      <i class="fa fa-mobile"></i><span class="title">下载手机应用</span>
+</a>    <div class="ad-container ">
+      <div class="ad-pop">
+        <img class="ad-logo" src="http://cdn-qn0.jianshu.io/assets/apple-touch-icons/114-8dae53b3bcea3f06bb139e329d1edab3.png" alt="114" />
+        <p class="ad-title">简书</p>
+        <p class="ad-subtitle">交流故事，沟通想法</p>
+        <img class="ad-qrcode" src="http://cdn-qn0.jianshu.io/assets/app-page/download-app-qrcode-053849fa25f9b44573ef8dd3c118a20f.png" alt="Download app qrcode" />
+        <div>
+          <a class="ad-link" href="https://itunes.apple.com/cn/app/jian-shu/id888237539?ls=1&amp;mt=8">iOS</a>·
+          <a class="ad-link" href="http://downloads.jianshu.io/apps/haruki/JianShu-1.11.2.apk">Android</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="nav-user">
+      <a href='#view-mode-modal' data-toggle='modal'><i class="fa fa-font"></i><span class="title">显示模式</span></a>
+
+      <a class="signin" data-signin-link="true" data-toggle="modal" data-placement="right" data-original-title="登录" data-container="div.expanded" href="/sign_in">
+        <i class="fa fa-sign-in"></i><span class="title">登录</span>
+</a>    </div>
+  </div>
+
+  
+    <div class="fixed-btn">
+    <a class="go-top hide-go-top" href="#"> <i class="fa fa-angle-up"></i></a>
+    <a class="qrcode" data-target="#bottom-qrcode" data-toggle="modal" href="javascript:void(0)"><i class="fa fa-qrcode"></i></a>
+    <a class="writer" href="/writer#/" data-toggle="tooltip" data-placement="left" title="写篇文章"><i class="fa fa-pencil"></i></a>
+    <!-- qrcode modal -->
+    <div id="bottom-qrcode" class="modal panel-modal hide fade" tabindex="-1" role="dialog" aria-hidden="true">
+      <h4>下载简书移动应用</h4>
+      <div class="panel-body"><img src="http://cdn-qn0.jianshu.io/assets/app-page/download-app-qrcode-053849fa25f9b44573ef8dd3c118a20f.png" alt="Download app qrcode" /></div>
+    </div>
+  </div>
+
+
+  <div id="show-note-container">
+    
+<div class="post-bg" id="flag">
+  <div class="wrap-btn">
+    <!-- Notebook and collections button upper left -->
+      <div class="article-related pull-left">
+          <a class="collection-menu-btn" data-toggle="modal" data-target="#collection-menu" href="javascript:void(null);">
+            <i class="fa fa-th"></i>
+</a>          <a class="notebooks-menu-btn" data-toggle="modal" data-target="#notebooks-menu" href="javascript:void(null);"><i class="fa fa-list-ul"></i></a>
+        <div class="related-avatar-group activities"></div>
+      </div>
+    <!-- ******* -->
+
+      <a class="login" data-signup-link="true" data-toggle="modal" href="/sign_up">
+    <i class="fa fa-user"></i> 注册
+</a>  <a class="login" data-signin-link="true" data-toggle="modal" href="/sign_in">
+    <i class="fa fa-sign-in"></i> 登录
+</a>
+
+    <!-- Buttons upper right -->
+    <!-- ******* -->
+  </div>
+
+  <div class="container">
+    <!-- Article activities for width under 768px -->
+    <div class="related-avatar-group activities"></div>
+      <div class="article">
+        <div class="preview">
+          <div class="author-info">
+              <div class="btn btn-small btn-success follow">
+    <a data-signin-link="true" data-toggle="modal" href="/sign_in"><i class="fa fa-plus"></i>  <span>添加关注</span></a>
+  </div>
+
+            <a class="avatar" href="/users/51cd6fc40769">
+              <img src="http://upload.jianshu.io/users/upload_avatars/2311396/6dbbd12f2527.jpg?imageMogr/thumbnail/90x90/quality/100" alt="100" />
+</a>            <span class="label">
+                作者
+            </span>
+            <a class="author-name blue-link" href="/users/51cd6fc40769">
+              <span>小熊样</span>
+</a>              <span data-toggle='tooltip' data-original-title='最后编辑于 2016.10.12 13:03'>2016.10.12 11:09*</span>
+            <div>
+              <span>写了16449字</span>，<span>被72人关注</span>，<span>获得了407个喜欢</span>
+            </div>
+          </div>
+          <h1 class="title">33本适合设计师看的好书 别说你一本没看过！</h1>
+          <div class="meta-top">
+            <span class="wordage"></span>
+            <span class="views-count"></span>
+            <span class="comments-count"></span>
+            <span class="likes-count"></span>
+          </div>
+
+          <!-- Collection/Bookmark/Share for width under 768px -->
+          <div class="article-share"></div>
+          <!-- -->
+
+          <div class="show-content"><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/2311396-285fc0859c383a18.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/2311396-285fc0859c383a18.jpg?imageMogr2/auto-orient/strip"><br><div class="image-caption">图片来自云网络</div>
+</div><p>经常有朋友写邮件或发推问我，想从事设计，希望推荐几本书。老回邮件也麻烦，我干脆在做一个书单。我读过的，认为值得入门者和高阶者一读的书。按由浅到深，必读到可读的顺序。主要关注方向是UI、视觉传达、WEB设计，以及历史、理论、常见工具入门教程。</p><br><p>用了半个上午写的，比较仓促，不够全面，也有个人偏好在里面。</p><p>我会保持修订和更新这份书列。</p><p>如果你仅仅是对设计感兴趣，没有那么多时间读大部头，那么精简版是：1，2，3，5，9，11，12，17，24</p><p>如果你是一个工程师或程序员，想做点web设计，精简版是：1，2，3，10，11，27 （不考虑工具的使用）</p><p>书单：想做设计师？</p><p>全部图书(34)</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/2311396-3ca61860a373e70d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/2311396-3ca61860a373e70d.jpg?imageMogr2/auto-orient/strip"><br><div class="image-caption">图片来自云网络</div>
+</div><p>1.<a href="http://book.douban.com/subject/3323633/" target="_blank">写给大家看的设计书（第3版）</a></p><p>作者 : [美] Robin Williams</p><p>出版社 : 人民邮电出版社</p><p>评语 : 虽然它很薄，但是非常经典的入门书。如果你从来没有尝试过做设计，这可以成为你需要读的第一本设计书。但千万不要以为读完它你就够了。</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/2311396-12fd45f01c0c42bb.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/2311396-12fd45f01c0c42bb.jpg?imageMogr2/auto-orient/strip"><br><div class="image-caption">图片来自云网络</div>
+</div><p>2.<a href="http://book.douban.com/subject/1827702/" target="_blank">点石成金</a></p><p>作者 : [美] 史蒂夫·克鲁克</p><p>出版社 : 机械工业出版社</p><p>评语 : 虽然这本书已经被推荐烂了，但我还是会它推荐给入门者。因为它够薄够有趣。书本身的体验和它所讲述的原则保持了一致，成为一本阅读体验非常好的书。读完它你具备了一些对于用户体验的基础知识和原则，但是要记住，非常基础。不要看完就出去吹牛皮，这是设计了给CXO们在飞机上看的扫盲读本。</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/2311396-66aff86ab2eafc2d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/2311396-66aff86ab2eafc2d.jpg?imageMogr2/auto-orient/strip"><br><div class="image-caption">图片来自云网络</div>
+</div><p>3.<a href="http://book.douban.com/subject/3988148/" target="_blank">平面设计法则</a></p><p>作者 : 德比·米尔曼(Debbie millman)</p><p>出版社 : 中国青年出版社</p><p>评语 : 比较基本。关于平面设计法则系列的书讲得都大同小异。</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/2311396-0f7948fedf285367.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/2311396-0f7948fedf285367.jpg?imageMogr2/auto-orient/strip"><br><div class="image-caption">图片来自云网络</div>
+</div><p>4.<a href="http://book.douban.com/subject/2201860/" target="_blank">美国视觉传达完全教程</a></p><p>作者 : （美）瑞恩（Ryan.W.）、柯诺瓦（Conover.Th） 著，忻雁 等译</p><p>出版社 : 上海人民美术出版社</p><p>评语 : 视觉传播的经典教材。所有涉及传播行业的人都应该读的一本书。涉及面非常广，信息量很大。视觉传达是设计的必要基础。</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/2311396-c02c72c525030508.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/2311396-c02c72c525030508.jpg?imageMogr2/auto-orient/strip"><br><div class="image-caption">图片来自云网络</div>
+</div><p>5.<a href="http://book.douban.com/subject/1288844/" target="_blank">设计心理学</a></p><p>作者 : （美国）唐纳德﹒A﹒诺曼</p><p>出版社 : 中信出版社</p><p>评语 : 会改变你看待世界的方式的一本书，改变你的设计评价标准。虽然很薄，很老。但里面讲述的原则却长久不衰。设计是双向的。设计是为了要解决问题的。形式追随内容。</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/2311396-f4795065e4cbd9d0.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/2311396-f4795065e4cbd9d0.jpg?imageMogr2/auto-orient/strip"><br><div class="image-caption">图片来自云网络</div>
+</div><p>6.<a href="http://book.douban.com/subject/3162991/" target="_blank">艺术的故事</a></p><p>作者 : [英] 贡布里希 (Sir E.H.Gombrich)</p><p>出版社 : 广西美术出版社</p><p>评语 : 如果你只有时间读一本艺术史，这个是最好的选择。我们不爱读艺术史是因为学校里读了太多坏胃口的教科书。作者和译者都是顶好的，艺术史会改变你的看待和评价艺术的方式，提升你的审美感觉。</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/2311396-b15319b2d804deb3.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/2311396-b15319b2d804deb3.jpg?imageMogr2/auto-orient/strip"><br><div class="image-caption">图片来自云网络</div>
+</div><p>7.<a href="http://book.douban.com/subject/2348880/" target="_blank">现代设计史</a></p><p>作者 : （美）瑞兹曼 著，（澳）王栩宇 等译</p><p>出版社 : 中国人民大学出版社</p><p>评语 : 如果你只有时间读一本设计史，这个是最好的选择。不要去看王受之”写”的那本，要看就去看Meggs的原版。这本书翻译欠点，读起来会稍有枯燥。读历史的时候，不要为了当一个知道分子而去记忆或背诵。在读的时候要随时去思考，设计的改变是如何发生的，在一个时代背景下，为什么一个设计会是那样的形式。你还可以从百年前的经典作品里获得灵感，并惊异于它们居然毫不过时。还可以从许多大师的身影中看到，要成为一个卓越的设计师，你需要懂得远远不止是设计。</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/2311396-82e39722473bfc31.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/2311396-82e39722473bfc31.jpg?imageMogr2/auto-orient/strip"><br><div class="image-caption">图片来自云网络</div>
+</div><p>8.<a href="http://book.douban.com/subject/3519868/" target="_blank">平面设计视觉词典</a></p><p>作者 : (瑞士)加文·安布罗斯/（瑞士）哈里斯（Harris，P.）</p><p>出版社 : 上海人民美术出版社</p><p>评语 : 适合初学者放在枕边，睡前随便一翻。里面有一些基本的解释和典故，知道那些专业名词英文怎么写也是很必要的。</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/2311396-60d4689374dbcaf9.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/2311396-60d4689374dbcaf9.jpg?imageMogr2/auto-orient/strip"><br><div class="image-caption">图片来自云网络</div>
+</div><p>9.<a href="http://book.douban.com/subject/3919668/" target="_blank">产品的诞生</a></p><p>作者 : （英）哈德森 编著，刘硕 译</p><p>出版社 : 中国青年出版社</p><p>评语 : 告诉你真正的设计是如何运作和产生的。你在纸上、鼠标上完成的，那仅仅是链条中的一环。不要把视野局限在你的专业范围内，工程、工艺、材料、调研、分析、商业运作、策略，了解得越多，站得越高。</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/2311396-6abcea0ad0b91ecd.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/2311396-6abcea0ad0b91ecd.jpg?imageMogr2/auto-orient/strip"><br><div class="image-caption">图片来自云网络</div>
+</div><p>10.<a href="http://book.douban.com/subject/3070283/" target="_blank">文字设计基础教程</a></p><p>作者 : (英)加文·安布罗斯.保罗·哈里斯 译者</p><p>出版社 : 中国青年出版社</p><p>评语 : 浅显好读的Typography入门读本。里面具备你应该了解的大部分字体相关的基础知识。</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/2311396-987253115cede804.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/2311396-987253115cede804.jpg?imageMogr2/auto-orient/strip"><br><div class="image-caption">图片来自云网络</div>
+</div><p>11.<a href="http://book.douban.com/subject/1291969/" target="_blank">七日掌握设计配色基础</a></p><p>作者 : [日]视觉设计研究所</p><p>出版社 : 中国青年出版社</p><p>评语 : 关于颜色原理和配色的书，可推荐的中文书实在不多。这本还不错。不过你也买不到了，可以找到pdf下载。</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/2311396-3fe543e15bec0166.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/2311396-3fe543e15bec0166.jpg?imageMogr2/auto-orient/strip"><br><div class="image-caption">图片来自云网络</div>
+</div><p>12.<a href="http://book.douban.com/subject/4230237/" target="_blank">设计中的设计 | 全本</a></p><p>作者 : [日] 原研哉</p><p>出版社 : 广西师范大学出版社</p><p>评语 : 请看全本。虽然我不喜欢的畅销书，但原研哉的创作还是非常令我惊讶。。里面他关于设计史的理解那一章是我认为最有价值的。</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/2311396-edc56d7825da317b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/2311396-edc56d7825da317b.jpg?imageMogr2/auto-orient/strip"><br><div class="image-caption">图片来自云网络</div>
+</div><p>13.<a href="http://book.douban.com/subject/1952242/" target="_blank">美国广告设计实用教程</a></p><p>作者 : （美）蓝达（Landa，R.） 著，戴佳敏，刘慕义 译</p><p>出版社 : 上海人民美术出版社</p><p>评语 : 又一本大而全的教程。一本解决基础知识、产业、历史的问题，也是很省事的。不管你是不是准备干广告设计，它都很有阅读价值。</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/2311396-37d774d32530dae6.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/2311396-37d774d32530dae6.jpg?imageMogr2/auto-orient/strip"><br><div class="image-caption">图片来自云网络</div>
+</div><p>14.<a href="http://book.douban.com/subject/1491830/" target="_blank">栅格系统与版式设计</a></p><p>作者 : （美）伊拉姆（Elam.k.） 著，王昊 译</p><p>出版社 : 上海人民美术出版社</p><p>评语 : 栅格系统历史悠久，现在也并不过时。了解这种设计方法论也是很好的，特别是涉及排版的时候。但我个人并不用这种理性主义的设计方法。</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/2311396-2b8e9588aadd5f97.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/2311396-2b8e9588aadd5f97.jpg?imageMogr2/auto-orient/strip"><br><div class="image-caption">图片来自云网络</div>
+</div><p>15.<a href="http://book.douban.com/subject/3003592/" target="_blank">平面设计材料表现与特殊效果</a></p><p>作者 : （美）费希尔　著，梵非，刘语天，徐梅　译</p><p>出版社 : 上海人民美术出版社</p><p>评语 : 中国设计师在材料和工艺上一直非常薄弱，工具和实现手法会在很大程度上影响你的想法，局限你的创作力。</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/2311396-d4cb9f0aba3dfcae.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/2311396-d4cb9f0aba3dfcae.jpg?imageMogr2/auto-orient/strip"><br><div class="image-caption">图片来自云网络</div>
+</div><p>16.<a href="http://book.douban.com/subject/3300473/" target="_blank">平面设计工艺:材料与印刷的创意解决方案</a></p><p>作者 : （英）梅森　编著</p><p>出版社 : 中国青年出版社</p><p>评语 : 同样是帮助你了解工艺与材料。书里提供了许多不常见的材料，而且不仅仅局限于平面材料。不过光看书还是没有用的，多搜集各种材料和实现工艺的样品，一定要看到实体，观察组合实践后，你才能有感觉。</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/2311396-7025ecee4db4d02d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/2311396-7025ecee4db4d02d.jpg?imageMogr2/auto-orient/strip"><br><div class="image-caption">图片来自云网络</div>
+</div><p>17.<a href="http://book.douban.com/subject/1491819/" target="_blank">品牌标志：顶级设计150例</a></p><p>作者 : (美)安妮丝塔西娅·米勒</p><p>出版社 : 上海人民美术出版社</p><p>评语 : 不过你做哪类设计师，最后都逃不过要做logo设计。这个既是基本功，也是非常重要的训练方法：需求提炼，概念抽象，思维发散，灵感捕捉，进一步分析取舍，实现：构图，配色，排版，质感，最后一步，介绍你的设计并打动客户。这本书里对于整个设计过程的追溯和分析非常有价值。比大量案例的罗列要好得多。</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/2311396-7e11453bb2284699.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/2311396-7e11453bb2284699.jpg?imageMogr2/auto-orient/strip"><br><div class="image-caption">图片来自云网络</div>
+</div><p>18.<a href="http://book.douban.com/subject/1833714/" target="_blank">标志字体设计圣经</a></p><p>作者 : （美）凯巴加　著，王毅　译</p><p>出版社 : 上海人民美术出版社</p><p>评语 : 除了在LOGO设计中用到，你还可以顺便学习一下字体设计(拉丁字体）。再顺便学习一下矢量造型。</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/2311396-976f13612bf71acf.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/2311396-976f13612bf71acf.jpg?imageMogr2/auto-orient/strip"><br><div class="image-caption">图片来自云网络</div>
+</div><p>19.<a href="http://book.douban.com/subject/2327417/" target="_blank">大师之路：Photoshop中文版完全解析（附光盘）</a></p><p>作者 : 赵鹏</p><p>出版社 : 人民邮电出版社</p><p>评语 : 全书我没有看过，看过里面的一些节选。因为ps cs2 wow! 不是很适合初学者，但是我当正式学习PS时的大部头教科书现在早就绝版了。《PHOTOSHOP 6 大全》。大师之路是本书列里唯一一本国人写的书。我觉得赵鹏写得这本体系性还是很强的，当用户手册来看也是很不错的。</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/2311396-e4b46d1761ed52b2.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/2311396-e4b46d1761ed52b2.jpg?imageMogr2/auto-orient/strip"><br><div class="image-caption">图片来自云网络</div>
+</div><p>20.<a href="http://book.douban.com/subject/2224412/" target="_blank">PHOTOSHOP CS/CS2 WOW!BOOK</a></p><p>作者 : 戴顿</p><p>出版社 : 中国青年出版社</p><p>评语 : PS入了门以后，一定要看的PS 工具书。无论你是PS的几段高手，里面还是会有让你惊喜的发现。但我觉得结构设计得不是很好。看wow！系列丛书不用介意软件版本。3代之内影响不大。</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/2311396-783f577443f3118e.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/2311396-783f577443f3118e.jpg?imageMogr2/auto-orient/strip"><br><div class="image-caption">图片来自云网络</div>
+</div><p>21.<a href="http://book.douban.com/subject/3419382/" target="_blank">The Adobe Illustrator cs3 WOW！Book</a></p><p>作者 : （美）斯得渥 编著，冯文 译</p><p>出版社 : 中国青年出版社</p><p>评语 : 我所见过的最好的教程书。最好最好最好，同时适合初学者和高阶用户。而且幸运的是，它属于AI这个重要的工具。在某些程度上，我认为AI比PS更重要，因为PS是处理工具，而AI是创造工具。你做平面、插画、角色和UI设计更是离不开它。</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/2311396-fd00426480bb833f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/2311396-fd00426480bb833f.jpg?imageMogr2/auto-orient/strip"><br><div class="image-caption">图片来自云网络</div>
+</div><p>22.<a href="http://book.douban.com/subject/2977494/" target="_blank">Painter X WOW!Book</a></p><p>作者 : （美）彭达维斯 编著，吴小华 译</p><p>出版社 : 中国青年出版社</p><p>评语 : 如果你准备干设计，我建议你买个数位板，然后尝试一下painter（不管你是不是接受过绘画训练) 它们会拓展你的创作方式。这是Painter 目前最好的教程，《Painter X 的标准培训教程》也不错，可以作为用户手册备查。</p><p>另外我建议一定要去学一种3D创作工具，不用学很深，能够做基本的造型和建模就可以。最后将几种工具结合起来运用，对你的创作提升帮助也会非常大。但这个我目前也没有做到。所以就先不推荐3D的书了。</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/2311396-cba56eb01e908242.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/2311396-cba56eb01e908242.jpg?imageMogr2/auto-orient/strip"><br><div class="image-caption">图片来自云网络</div>
+</div><p>23.<a href="http://book.douban.com/subject/1479072/" target="_blank">消费者行为学</a></p><p>作者 : （美）卡纽克 著，俞文钊 译</p><p>出版社 : 华东师范大学出版社</p><p>评语 : 设计师还必须要去了解的两个领域：心理学和传播学。如果你只有时间读一本心理学相关，我还是推荐最为实用和密切的消费者行为学。(《设计心理学》和心理学没有关系，烂出版社翻的烂名字。) 如果你觉得这本大部头难以消化，我建议你先读《影响力》和《社会性动物》也许你会爱上心理学。然后可以读一些知视觉，格式塔，和认知心理学的书。很有用。</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/2311396-2d76c600ff63e0ab.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/2311396-2d76c600ff63e0ab.jpg?imageMogr2/auto-orient/strip"><br><div class="image-caption">图片来自云网络</div>
+</div><p>24.<a href="http://book.douban.com/subject/1314262/" target="_blank">情感化设计</a></p><p>作者 : [美] 唐纳德·A·诺曼</p><p>出版社 : 电子工业出版社</p><p>评语 : 我认为这是一本被低估了的书，有人说它和设计心理学大同小异，也有人说它翻来覆去就在说那么几句话。但是我每一阶段都会能从这本书里读出不同的心得，在遇到许多成功和伟大的案例的时候，我都会想起这本书里的话。建议去读英文原版。</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/2311396-2e4a249b4c5fedda.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/2311396-2e4a249b4c5fedda.jpg?imageMogr2/auto-orient/strip"><br><div class="image-caption">图片来自云网络</div>
+</div><p>25.<a href="http://book.douban.com/subject/3990022/" target="_blank">美国纽约摄影学院摄影教材（最新修订版）上</a></p><p>作者 : 美国纽约摄影学院 著，中国摄影出版社 译</p><p>出版社 : 中国摄影出版社</p><p>评语 : 做设计师怎么能不会摄影呢，哼哼哼。很快你就会发现图库不是一个什么好东西，除了要花钱，还会让你的设计变得俗气和程式化。许多好的灵感和配图，你都可以用自己的镜头去捕捉，只要假以时日积累，你会得到一个金矿。</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/2311396-2356bfd11916b7f7.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/2311396-2356bfd11916b7f7.jpg?imageMogr2/auto-orient/strip"><br><div class="image-caption">图片来自云网络</div>
+</div><p>26.<a href="http://book.douban.com/subject/3990023/" target="_blank">美国纽约摄影学院摄影教材(最新修订版)(下册)</a></p><p>作者 : 美国纽约摄影学院</p><p>出版社 : 中国摄影出版社</p><p>评语 : 反正现在单反那么普及，产生数字垃圾或财富，都是如此轻易。如果有一个iphone4 就更好了，随时拍下能激发你的东西。</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/2311396-050e327c56c3f473.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/2311396-050e327c56c3f473.jpg?imageMogr2/auto-orient/strip"><br><div class="image-caption">图片来自云网络</div>
+</div><p>27.<a href="http://book.douban.com/subject/2365393/" target="_blank">Designing Interfaces中文版</a></p><p>作者 : Jenifer Tidwell</p><p>出版社 : 电子工业出版社</p><p>评语 : 如果你要从事UI/web方面的设计，此书必读。非常出色。译者和作者我都非常喜欢。既是一本工具手册，也充满了理论、智慧和经验。光读前4章，你都深深沉醉。</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/2311396-f5e18f454c0b851e.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/2311396-f5e18f454c0b851e.jpg?imageMogr2/auto-orient/strip"><br><div class="image-caption">图片来自云网络</div>
+</div><p>28.<a href="http://book.douban.com/subject/3169342/" target="_blank">Web信息架构(第3版)</a></p><p>作者 : Peter Morville/Louis Rosenfeld</p><p>出版社 : 电子工业出版社</p><p>评语 : IA设计，我认为许多设计师都需要这方面知识，不光是UI或交互设计。因为信息革命已经深深改变了这个时代人们的生活，可以与工艺革命的影响相媲美。掌握关于信息的知识、梳理分析方法，把数据变成有用、直观、甚至有趣的东西，是多么有意思的事情。信息/数据可视化是未来一个非常重要和有意思的设计领域</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/2311396-d6b27fc436143210.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/2311396-d6b27fc436143210.jpg?imageMogr2/auto-orient/strip"><br><div class="image-caption">图片来自云网络</div>
+</div><p>29.<a href="http://book.douban.com/subject/3279105/" target="_blank">About Face 3 交互设计精髓</a></p><p>作者 : Alan Cooper/Robert Reimann/David Cronin</p><p>出版社 : 电子工业出版社</p><p>评语 : 交互设计的经典基础书。作为一个UI设计师，如果你不想最后沦为一个”装修者”，去看看这本书，站得更高点</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/2311396-cd3ef5a3bd5ba1a9.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/2311396-cd3ef5a3bd5ba1a9.jpg?imageMogr2/auto-orient/strip"><br><div class="image-caption">图片来自云网络</div>
+</div><p>30.<a href="http://book.douban.com/subject/3821157/" target="_blank">Web界面设计</a></p><p>作者 : Bill Scott/Theresa Neil</p><p>出版社 : 电子工业出版社</p><p>评语 : 不错的资源书，但不要用错了。</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/2311396-09b9de644add0e78.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/2311396-09b9de644add0e78.jpg?imageMogr2/auto-orient/strip"><br><div class="image-caption">图片来自云网络</div>
+</div><p>31.<a href="http://book.douban.com/subject/1603076/" target="_blank">艺术?设计的平面构成</a></p><p>作者 : （日）朝仓直巳</p><p>出版社 : 中国计划出版社</p><p>评语 : 朝仓直巳的这套书，比较老，不过应该还可以在淘宝上以比较便宜的价格买到。学院派学设计一直会开的视觉构成课，这几本书会帮你解决。虽然看起来它们的实现手法不够现代，但这仍然是非常有益的基础训练。</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/2311396-fea16b245e81cbcd.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/2311396-fea16b245e81cbcd.jpg?imageMogr2/auto-orient/strip"><br><div class="image-caption">图片来自云网络</div>
+</div><p>32.<a href="http://book.douban.com/subject/1603077/" target="_blank">艺术·设计的色彩构成</a></p><p>作者 : （日）朝仓直巳</p><p>出版社 : 中国计划出版社</p><p>评语：没的说的好书，比起国内所谓专家学者编写的《色彩构成》的教学书完全就不一个档次，虽然这书是很老了但毕竟学问这东西万变不里其宗！我不得不承认日本人出教学方面的书比中国人严谨很多！</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/2311396-af01b40e87dcfc9e.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/2311396-af01b40e87dcfc9e.jpg?imageMogr2/auto-orient/strip"><br><div class="image-caption">图片来自云网络</div>
+</div><p>33.<a href="http://book.douban.com/subject/1603078/" target="_blank">艺术?设计的光构成</a></p><p>作者 : （日）朝仓直巳</p><p>出版社 : 中国计划出版社</p><p>简介：在广阔的造型领域中，我们已经迎来了“光”的活跃时代。光在造型领域中的应用，将会获得持续不断的发展。为了增强未来光设计的能力，本书主要探讨与光造型相关的基础部分。</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/2311396-3a1c905a4f090e86.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/2311396-3a1c905a4f090e86.jpg?imageMogr2/auto-orient/strip"><br><div class="image-caption">图片来自云网络</div>
+</div></div>
+        </div>
+      </div>
+
+      <div class="visitor_edit">
+        <!-- further readings -->
+        <div id="further-readings" data-user-slug="" data-user-nickname="">
+          <div id="further-reading-line" class="hide further-reading-line"></div>
+          <ul id="further-readings-list" class="reading-list unstyled"></ul>
+          <div id="further-reading-new" class="reading-edit">
+              <a data-signin-link="true" data-toggle="modal" href="/sign_in">
+                <i class="fa fa-plus-circle"></i> 推荐拓展阅读
+</a>            <div id="further-reading-form"></div>
+          </div>
+        </div>
+        <div class="pull-right">
+          <!-- copyright -->
+          <div class="author-copyright pull-right" data-toggle="tooltip" data-html="true" title="转载请联系作者获得授权，并标注“简书作者”。">
+            <a><i class="fa fa-copyright"></i> 著作权归作者所有</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reward / Support Author -->
+        <div class="support-author">
+          <p>如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作！</p>
+            <a class="btn btn-pay" data-toggle="modal" href="#pay-modal">¥ 打赏支持</a>
+          <div class="avatar-list"></div>
+        </div>
+
+      <!-- article meta bottom -->
+      <div class="meta-bottom clearfix">
+        <!--  Like Button -->
+        <div class="like ">
+            <div class="like-button">
+              <a id="like-note" class="like-content" data-signin-link="true" data-toggle="modal" href="/sign_in">
+                <i class="fa fa-heart-o"></i>  喜欢
+</a></div>          <span id="likes-count" data-toggle="tooltip" data-placement="right" title="查看所有喜欢的用户">
+            <i class="fa fa-spinner fa-pulse"></i>
+</span>        </div>
+        <!--  share group -->
+        <div class="share-group pull-right">
+          <a href="javascript:void((function(s,d,e,r,l,p,t,z,c){var%20f=&#39;http://v.t.sina.com.cn/share/share.php?appkey=1881139527&#39;,u=z||d.location,p=[&#39;&amp;url=&#39;,e(u),&#39;&amp;title=&#39;,e(t||d.title),&#39;&amp;source=&#39;,e(r),&#39;&amp;sourceUrl=&#39;,e(l),&#39;&amp;content=&#39;,c||&#39;gb2312&#39;,&#39;&amp;pic=&#39;,e(p||&#39;&#39;)].join(&#39;&#39;);function%20a(){if(!window.open([f,p].join(&#39;&#39;),&#39;mb&#39;,[&#39;toolbar=0,status=0,resizable=1,width=440,height=430,left=&#39;,(s.width-440)/2,&#39;,top=&#39;,(s.height-430)/2].join(&#39;&#39;)))u.href=[f,p].join(&#39;&#39;);};if(/Firefox/.test(navigator.userAgent))setTimeout(a,0);else%20a();})(screen,document,encodeURIComponent,&#39;&#39;,&#39;&#39;,&#39;http://cwb.assets.jianshu.io/notes/images/6278768/weibo/image_f61b00248b9b.jpg&#39;, &#39;推荐 小熊样 的文章《33本适合设计师看的好书 别说你一本没看过！》（ 分享自 @简书 ）&#39;,&#39;http://www.jianshu.com/p/f4bc96e5cf32&#39;,&#39;页面编码gb2312|utf-8默认gb2312&#39;));" data-name="weibo">
+            <i class="fa fa-weibo"></i><span>分享到微博</span>
+          </a>
+          <a data-toggle="modal" href="#share-weixin-modal" data-name="weixin">
+            <i class="fa fa-weixin"></i><span>分享到微信</span>
+          </a>
+          <div class="more">
+            <a href="javascript:void(0)" data-toggle="dropdown">更多分享<i class="fa fa-caret-down"></i></a>
+            <ul class="dropdown-menu arrow-top">
+                <li><a href="http://cwb.assets.jianshu.io/notes/images/6278768/weibo/image_f61b00248b9b.jpg" target="_blank" data-name="changweibo"><i class="fa fa-arrow-circle-o-down"></i> 下载长微博图片</a></li>
+                <li>
+                  <a data-name="tweibo" href="javascript:void(function(){var d=document,e=encodeURIComponent,r=&#39;http://share.v.t.qq.com/index.php?c=share&amp;a=index&amp;url=&#39;+e(&#39;http://www.jianshu.com/p/f4bc96e5cf32&#39;)+&#39;&amp;title=&#39;+e(&#39;推荐 小熊样 的文章《33本适合设计师看的好书 别说你一本没看过！》（ 分享自 @jianshuio ）&#39;),x=function(){if(!window.open(r,&#39;tweibo&#39;,&#39;toolbar=0,resizable=1,scrollbars=yes,status=1,width=600,height=600&#39;))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();">
+                    <img src="http://baijii-common.b0.upaiyun.com/social_icons/32x32/tweibo.png" alt="Tweibo" /> 分享到腾讯微博
+</a>                </li>
+                <li>
+                  <a data-name="qzone" href="javascript:void(function(){var d=document,e=encodeURIComponent,r=&#39;http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=&#39;+e(&#39;http://www.jianshu.com/p/f4bc96e5cf32&#39;)+&#39;&amp;title=&#39;+e(&#39;推荐 小熊样 的文章《33本适合设计师看的好书 别说你一本没看过！》&#39;),x=function(){if(!window.open(r,&#39;qzone&#39;,&#39;toolbar=0,resizable=1,scrollbars=yes,status=1,width=600,height=600&#39;))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();">
+                    <img src="http://baijii-common.b0.upaiyun.com/social_icons/32x32/qzone.png" alt="Qzone" /> 分享到QQ空间
+</a>                </li>
+                <li>
+                  <a data-name="twitter" href="javascript:void(function(){var d=document,e=encodeURIComponent,r=&#39;https://twitter.com/share?url=&#39;+e(&#39;http://www.jianshu.com/p/f4bc96e5cf32&#39;)+&#39;&amp;text=&#39;+e(&#39;推荐 小熊样 的文章《33本适合设计师看的好书 别说你一本没看过！》（ 分享自 @jianshucom ）&#39;)+&#39;&amp;related=&#39;+e(&#39;jianshucom&#39;),x=function(){if(!window.open(r,&#39;twitter&#39;,&#39;toolbar=0,resizable=1,scrollbars=yes,status=1,width=600,height=600&#39;))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();">
+                    <img src="http://baijii-common.b0.upaiyun.com/social_icons/32x32/twitter.png" alt="Twitter" /> 分享到Twitter
+</a>                </li>
+                <li>
+                  <a data-name="facebook" href="javascript:void(function(){var d=document,e=encodeURIComponent,r=&#39;https://www.facebook.com/dialog/share?app_id=483126645039390&amp;display=popup&amp;href=http://www.jianshu.com/p/f4bc96e5cf32&#39;,x=function(){if(!window.open(r,&#39;facebook&#39;,&#39;toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330&#39;))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();">
+                    <img src="http://baijii-common.b0.upaiyun.com/social_icons/32x32/facebook.png" alt="Facebook" /> 分享到Facebook
+</a>                </li>
+                <li>
+                  <a data-name="google_plus" href="javascript:void(function(){var d=document,e=encodeURIComponent,r=&#39;https://plus.google.com/share?url=&#39;+e(&#39;http://www.jianshu.com/p/f4bc96e5cf32&#39;),x=function(){if(!window.open(r,&#39;google_plus&#39;,&#39;toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330&#39;))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();">
+                    <img src="http://baijii-common.b0.upaiyun.com/social_icons/32x32/google_plus.png" alt="Google plus" /> 分享到Google+
+</a>                </li>
+                <li>
+                  <a data-name="douban" href="javascript:void(function(){var d=document,e=encodeURIComponent,s1=window.getSelection,s2=d.getSelection,s3=d.selection,s=s1?s1():s2?s2():s3?s3.createRange().text:&#39;&#39;,r=&#39;http://www.douban.com/recommend/?url=&#39;+e(&#39;http://www.jianshu.com/p/f4bc96e5cf32&#39;)+&#39;&amp;title=&#39;+e(&#39;33本适合设计师看的好书 别说你一本没看过！&#39;)+&#39;&amp;sel=&#39;+e(s)+&#39;&amp;v=1&#39;,x=function(){if(!window.open(r,&#39;douban&#39;,&#39;toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330&#39;))location.href=r+&#39;&amp;r=1&#39;};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})()">
+                    <img src="http://baijii-common.b0.upaiyun.com/social_icons/32x32/douban.png" alt="Douban" /> 分享到豆瓣
+</a>                </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modals -->
+      <div id="share-weixin-modal" class="modal hide fade share-weixin-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+  </div>
+  <div class="modal-body">
+    <h5>打开微信“扫一扫”，打开网页后点击屏幕右上角分享按钮</h5>
+  </div>
+</div>
+
+      
+      <div id="notebooks-menu" class="panel notebooks-menu arrow-top modal hide fade"><img class="loader-tiny" src="http://baijii-common.b0.upaiyun.com/loaders/tiny.gif" alt="Tiny" /></div>
+      <div id="collection-menu" class="panel collection-menu arrow-top modal hide fade"><img class="loader-tiny" src="http://baijii-common.b0.upaiyun.com/loaders/tiny.gif" alt="Tiny" /></div>
+      
+      <div id="likes-modal" class="modal modal_new support_list-modal fullscreen hide fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3>喜欢的用户</h3>
+      </div>
+      <div class="modal-body">
+        <ul class="unstyled users">
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+    <!-- Comments -->
+    <div id="comments" class="comment-list clearfix">
+        <div class="comment-head clearfix">
+          26条评论
+          <span class="order">
+            （
+            <a data-order="asc" class="active" href="javascript:void(0)">按时间正序</a>·
+            <a data-order="desc" href="javascript:void(0)">按时间倒序</a>·
+            <a data-order="likes_count" href="javascript:void(0)">按喜欢排序</a>
+            ）
+          </span>
+            <a class="goto-comment pull-right" data-signin-link="true" data-toggle="modal" href="/sign_in">
+              <i class="fa fa-pencil"></i>添加新评论
+</a>        </div>
+        <div id="comment-list">
+          <img class="loader-tiny" src="http://baijii-common.b0.upaiyun.com/loaders/tiny.gif" alt="Tiny" />
+        </div>
+          <p class="signout-comment">
+    <a class="btn btn-info" data-signin-link="true" data-toggle="modal" href="/sign_in">
+      登录后发表评论
+</a>  </p>
+
+    </div>
+    <!-- -->
+
+  </div>
+
+  <script type='application/json' data-name='note'>
+    {"id":6278768,"abbr":"经常有朋友写邮件或发推问我，想从事设计，希望推荐几本书。老回邮件也麻烦，我干脆在做一个书单。我读过的，认为值得入门者和高阶者一读的书。按由浅到深，必读到可读的顺序。主要关注方向是UI、视觉传达、WEB设计，以及历史、理论、常见工具入门教程。 用了半个上午写的，比较仓促，不够全面，也有个人偏好在里面。 我会保持修订和更新这份书列。 如果你仅仅是对设计感兴趣，没有那么多时间读大部头，那么精简版是：1，2，3，5，9，11，12，17，24 如果你是一个工程师或程序员，想做点web设计，精简版是：1，2，3，10，11，27 （不考虑工具的使用） 书单：想做设计师？ 全部图书(34) 1.写给...","slug":"f4bc96e5cf32","url":"http://www.jianshu.com/p/f4bc96e5cf32","image_url":"http://cwb.assets.jianshu.io/notes/images/6278768/weibo/image_f61b00248b9b.jpg","wordage":4265,"has_further_readings":false,"views_count":4471,"likes_count":335,"comments_count":26,"rewards_total_count":0}
+  </script>
+
+  <script type='application/json' data-name='uuid'>
+    {"uuid":"7463ab4e-75f1-42ea-b534-cf4c3064fe82"}
+  </script>
+
+  <script type='application/json' data-name='author'>
+    {"id":2311396,"nickname":"小熊样","slug":"51cd6fc40769","public_notes_count":11,"followers_count":72,"total_likes_count":407,"is_current_user":false,"is_signed_author":false}
+  </script>
+
+
+    <div class="include-collection">
+      <div class="content">
+        <h5>被以下专题收入，发现更多相似内容：</h5>
+        <ul id="all-collections" class="unstyled collections-list">
+            <li>
+              <a class="avatar" href="/collection/yD9GAd"><img src="http://upload.jianshu.io/collections/images/4/sy_20091020135145113016.jpg?imageMogr2/auto-orient/strip|imageView2/2/w/180" alt="180" /></a>              <div class="collections-info">
+                <h5>
+                  <a href="/collection/yD9GAd">读书</a>
+                </h5>
+                
+  <div class="btn btn-success follow">
+    <a data-signin-link="true" data-toggle="modal" href="/sign_in"><i class="fa fa-fw fa-plus"></i>  <span>添加关注</span></a>
+    <span>421.8K</span>
+  </div>
+
+                <p class="description">谈谈读的那些书。
+
+投稿须知：
+本专题仅收录与读书有关的文章。例如，书评、读书笔记和阅读方法等等。其余文章请转投其他相关文章。...</p>
+                <p>
+                  <a class="blue-link" href="/collection/yD9GAd">37997篇文章</a> · 421859人关注
+                </p>
+              </div>
+            </li>
+            <li>
+              <a class="avatar" href="/collection/0ed051fe7a21"><img src="http://upload.jianshu.io/collections/images/240076/android.graphics.Bitmap_436cb890.jpeg?imageMogr2/auto-orient/strip|imageView2/2/w/180" alt="180" /></a>              <div class="collections-info">
+                <h5>
+                  <a href="/collection/0ed051fe7a21">技能学习</a>
+                </h5>
+                
+  <div class="btn btn-success follow">
+    <a data-signin-link="true" data-toggle="modal" href="/sign_in"><i class="fa fa-fw fa-plus"></i>  <span>添加关注</span></a>
+    <span>904</span>
+  </div>
+
+                <p class="description">技能学习相关知识</p>
+                <p>
+                  <a class="blue-link" href="/collection/0ed051fe7a21">3067篇文章</a> · 904人关注
+                </p>
+              </div>
+            </li>
+            <li>
+              <a class="avatar" href="/collection/97becab9817a"><img src="http://upload.jianshu.io/collections/images/276392/%E4%B9%A6%E5%8D%95.jpg?imageMogr2/auto-orient/strip|imageView2/2/w/180" alt="180" /></a>              <div class="collections-info">
+                <h5>
+                  <a href="/collection/97becab9817a">书单</a>
+                </h5>
+                
+  <div class="btn btn-success follow">
+    <a data-signin-link="true" data-toggle="modal" href="/sign_in"><i class="fa fa-fw fa-plus"></i>  <span>添加关注</span></a>
+    <span>789</span>
+  </div>
+
+                <p class="description">各类推荐书单，一起徜徉在书籍的海洋里~ 
+
+投稿须知： 1.专题收录任何形式的书单、推荐书籍及书单相关内容（纯书评不收） 。 2....</p>
+                <p>
+                  <a class="blue-link" href="/collection/97becab9817a">792篇文章</a> · 789人关注
+                </p>
+              </div>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+  <!-- Modal -->
+    <div class="modal pay-modal text-center hide fade" id="pay-modal">
+  <div class="modal-header clearfix">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+  </div>
+  <form id="new_reward" class="new_reward" target="_blank" action="/notes/6278768/rewards" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="zA2i+F2epLurOMen4xHZG7ntM98SbVQdzBxK4+HmWoLsB6kliEiJ6F4+S1Dd88IB16zllrIq3fbj4CtfMi6KPQ==" />
+    <div class="modal-body">
+      <a href="/users/51cd6fc40769">
+        <div class="avatar"><img src="http://upload.jianshu.io/users/upload_avatars/2311396/6dbbd12f2527.jpg?imageMogr/thumbnail/90x90/quality/100" alt="100" /></div>
+</a>      <p><i class="fa fa-quote-left pull-left"></i>如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作！<i class="fa fa-quote-right pull-right"></i></p>
+      <div class="main-inputs text-left">
+        <div class="control-group">
+          <label for="reward_amount">打赏金额</label><i class="fa fa-yen"></i>
+          <input value="2.00" type="text" name="reward[amount_in_yuan]" id="reward_amount_in_yuan" />
+        </div>
+        <div class="control-group message">
+          <textarea placeholder="给Ta留言" name="reward[message]" id="reward_message">
+</textarea>
+        </div>
+      </div>
+      <div class="choose-pay text-left">
+        <h5>选择支付方式：</h5>
+        <div>
+          <label for="reward_channel_alipay">
+            <input type="radio" value="alipay" checked="checked" name="reward[channel]" id="reward_channel_alipay" />
+            <span class="alipay-bg"></span>
+</label>
+          
+          <label for="reward_channel_wx_pub_qr">
+            <input type="radio" value="wx_pub_qr" name="reward[channel]" id="reward_channel_wx_pub_qr" />
+            微信支付
+</label>        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button name="button" type="submit" class="btn btn-large btn-pay">立即支付</button>
+    </div>
+</form></div>
+
+    <div class="modal success-pay text-center hide fade" id="success-pay">
+  <div class="modal-header clearfix">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+  </div>
+  <div class="modal-body">
+    <h3><i class="icon-ok"></i>打赏成功</h3>
+    <img src="http://cdn-qn0.jianshu.io/assets/complete-pay-25426877089eb23bd76d9d0e6aad89c1.png" alt="Complete pay" />
+  </div>
+  <div class="modal-footer">
+    
+  </div>
+</div>
+
+</div>
+
+  </div>
+  <div id="flash" class="hide"></div>
+  
+  <div id="view-mode-modal" tabindex="-1" class="modal hide read-modal" aria-hidden="false" data-js-module='view-mode-modal'>
+    <div class="btn-group change-background" data-toggle="buttons-radio">
+      <a class="btn btn-daytime active" data-mode="day" href="javascript:void(null);">
+        <i class="fa fa-sun-o"></i>
+</a>      <a class="btn btn-nighttime " data-mode="night" href="javascript:void(null);">
+        <i class="fa fa-moon-o"></i>
+</a>    </div>
+    <div class="btn-group change-font" data-toggle="buttons-radio">
+      <a class="btn font " data-font="font1" href="javascript:void(null);">宋体</a>
+      <a class="btn font hei active" data-font="font2" href="javascript:void(null);">黑体</a>
+    </div>
+    <div class="btn-group change-locale" data-toggle="buttons-radio">
+      <a class="btn font active" data-locale="zh-CN" href="javascript:void(null);">简</a>
+      <a class="btn font hei " data-locale="zh-TW" href="javascript:void(null);">繁</a>
+    </div>
+  </div>
+
+  
+
+  <script src="http://cdn-qn0.jianshu.io/assets/base-ded41764c207f7ff545c28c670922d25.js"></script>
+  
+  <script src="http://cdn-qn0.jianshu.io/assets/reading-base-0028299ec0c770293c0f07e2f338b48f.js"></script>
+  <script src="http://cdn-qn0.jianshu.io/assets/reading/module_sets/note_show-1805bf39f59948b52870922039360dbb.js"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35169517-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<div style="display:none">
+  <script src="https://s11.cnzz.com/z_stat.php?id=1258679142&web_id=1258679142" language="JavaScript"></script>
+</div>
+
+<script>
+  (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      }
+      else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+
+
+<!DOCTYPE html> 
+<html> 
+  <head> 
+    <meta charset="utf-8"> 
+    <title>登录豆瓣</title> 
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1"> 
+    <style type="text/css"> 
+      body,h1,p { padding:0;margin:0; }
+      body { font:normal 12px/1.4 arial,sans-serif;color:#333;background:#eaeff3; }
+      em { font-style:normal; }
+      p em { color:#188414; }
+      a { text-decoration:none; }
+      a:link { color:#369; }
+      a:visited { color:#669; }
+      a:hover { color:#fff;background:#039; }
+      a:active { color:#fff;background:#f93; }
+      .hd { padding:20px;border-top:30px solid #ebf5ea;background:#fff; }
+      .bd { background:#fff; }
+      .intro { padding:0 20px;margin-bottom:20px; }
+      .item { padding-left:20px;margin-bottom:12px; }
+      .item input { padding:5px;width:12em;font-size:14px;border:1px solid #ccc;-webkit-appearance:none;-webkit-border-radius:3px;border-radius:3px; }
+      .item label { float:left;width:40px;line-height:2.8; }
+      .item:after { content:'\0020';display:block;clear:both; } 
+      .submit { margin-top:20px;background:#eaeff3;border-top:1px solid #d9e2e9;padding:20px 0 20px 60px; }
+      .submit input { padding:5px 20px;margin-right:20px;-webkit-appearance:none;font-size:13px;-webkit-border-radius:3px;border-radius:3px; }
+      .submit input[type=submit] { background:#3da247;border:1px solid #538730;color:#fff;font-weight:800;  }
+      .submit input[type=button] {
+        border:1px solid #b0b0b0;
+        background: -moz-linear-gradient(top, #fff 0%, #e2e2e2 100%); /* firefox */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fff), color-stop(100%,#e2e2e2)); /* webkit */
+        background: -o-linear-gradient(top, #fff 0%,#e2e2e2 100%); /* opera */
+      }
+        .logo { width:129px;height:25px;overflow:hidden;line-height:10em;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIEAAAAZCAMAAAAhS71MAAAAwFBMVEVuxuP/1rLq9vaFxpeSzKI0qFn/yJTn8+r/wYhErWRbtnVlun3U6tr/5c+Q0+n/0qqk2u4qpVL9/v1Svd95wo01tdvD48wZoUgApNO53cLE5/TK5dFuvYS24fHz+fWl1LEAqdUio06x2rz/3cDc7uGo1rRKr2gTrdes2Lj6/Pvw+f0Amjif0q35/P7g8/oLn0LR7PX/v4NSs28LrNf/u3vA4cn4+/n/+vcAoNH/zJ4jsdn/7uA+rGAMrdj////////Oz0I9AAAAQHRSTlP///////////////////////////////////////////////////////////////////////////////////8AwnuxRAAABF9JREFUeNq1lotyqkgQhtFhQAY0DqJCIAgKCBGNkouXsPT7v9XORY6anKpkU5vfitPKXL783dOJAn+Th9oghLSEX5WiE/NWOj/4qQF7kjr1dA7zGD5If/XhCyWv1rcJkjq7VQIhQtgp1RhXyExURJFawLXUVW1/sS1aZc13CeB2Jv+YMFuI46gTp2taxAyIGcK1ZpR8tb1KTfg2ARR6txt22Q976eKsfAKTSa76QVJBroM/g98lcCidnhXLhaYDDvIQI8gaogIyf5kATVPvrLlcmFdQ+XPkmzbzgEA9+W2Cp0td0QCYrCrETS4IWJwYBdxo/v8TXE6IOUFi1CRGM0bQkLzCFc4skCo8h8msJUEzVEajQRe4+scFwDnqtASJGqB2KdgPykjoERbHPvv83rlb7CVB7OuJrif8JTwIVadGXskIgMxnCKuqDkIpZpUS09oQBMPocHDdgyua2uLlyAcRaZKgCMRsFYSGSzab6dndwN3LAt61l95u1+uLSpxiTIUwnhLg8jEA84CA4YNF2yShmKKEASLMCQauq3ShYRwjfm7vriXoHTmBk2TTmd0gTHMAMXt0D7AeRFEX7nb99xetD02np+0ZwessLfMZU1qm+Zy7W5Q1KhEnIHPwaReEcorn54ARbF13AFz3EQs+EWBSUZGAAPPe9OAKq3jACbS73tHmJ2m7vvjecUCoNMNzzzOMNFAtAkglmWFU3PSwxujqLozccVtK7tK+JtgJgoy+ApdH+VUauyNoCTaMQNOEscyNhSI4V2J2UVNBYL2aJgDxLJKqTo5qNZXn1m8XgsdnaYE0YcjO/eABPuc/qXHKLbiHKw962jtwsagjvckq8bvH7cU3VLCxbZlqmUESy6tHsAMXArbTPUg1/0TK5yww34TCjJbMppN9Q9CBC4E/y3MvoGqep3WW53npA6RPFnjYDzD2cGjFwhjbwOqFAIbu8wbOOn0muPSDsKIzkYQbgsUVgbOaxjE2aDyldU3jeOWAzZebqKw8VTV160kQJAbNQSoVBMs/BONo9FeCNgueYLzUwQeCIizeQqY3+R52C/F/CVgWX+7b4OOWYA5S6pdZkARtJer28g/B8LMH8E11DZqefTVq0mx4+UltbyrR1rQbAoQzaE6RzAKLnqPNDwmarL2MATZIc5XagRs9Sg/knjcECebgo2jc3tzTjwnAwfIvFKKEEfCEPkhznnmzee9povg7veM1gU3EpVDOORscxssfZwESioMG9GBV5qIrK4doyIbt6XBiw77Hd90fXxZ9WQeiufmE1gkb11E0foRGOSjbKNr+lABySjMSxyWkcdUIRw+n8fhwGK2Bqd/baccd21r2RGoYhFTxtErkFYjcaBwdFMbi3vNO2BLs/gsBWI5RlSHADJvC8e1guVwqDyD1znrtYt/eBaOqssxwvKYtZGV5UjbMjXE0hM4PPJBqikIMbwVI2fa6uTy1bTHs2WC/2UxFc7V2bYtxzcZm3z5g0b9PYFa2psIX4gAAAABJRU5ErkJggg==) no-repeat; }
+        .accounts { color:#666;margin:0 0 60px 20px; }
+        .error { padding-left:60px;margin-bottom:10px;color:#d92616; }
+    </style> 
+  </head> 
+  <body> 
+    <div class="wrapper"> 
+      <div class="hd"> 
+        <div class="logo">豆瓣</div> 
+      </div> 
+ 
+      <div class="bd"> 
+      <p class="intro">
+      第三方应用 <b>简书</b> 请求连到你的豆瓣帐号。
+	<ul>
+    
+        <em><li>豆瓣公共api</li></em>
+    
+        <em><li>获得你的个人信息，好友关系和我说</li></em>
+    
+        <em><li>修改你的个人信息、好友关系; 发布或修改你的广播</li></em>
+	</ul>
+      </p>
+      <p class="intro"><a href="https://developers.douban.com/wiki/?title=terms" target="_blank">豆瓣开放平台服务条款</a></p>
+      <div class="error"></div>
+
+    
+    <form id="refuse_form" method="post" action="?client_id=07b4f47aa74e2448171edd6ff5ea6cd8&amp;redirect_uri=http%3A%2F%2Fwww.jianshu.com%2Fusers%2Fauth%2Fdouban%2Fcallback&amp;response_type=code&amp;scope=douban_basic_common%2Cshuo_basic_r%2Cshuo_basic_w&amp;state=8f22b3d5e3c88b19f5d106470880e0095022770aca114df9">
+        <input type="hidden" name="refuse" value="1">
+    </form>
+
+    <form method="post" action="?client_id=07b4f47aa74e2448171edd6ff5ea6cd8&amp;redirect_uri=http%3A%2F%2Fwww.jianshu.com%2Fusers%2Fauth%2Fdouban%2Fcallback&amp;response_type=code&amp;scope=douban_basic_common%2Cshuo_basic_r%2Cshuo_basic_w&amp;state=8f22b3d5e3c88b19f5d106470880e0095022770aca114df9">
+      <div class="item">
+        <label for="inp-alias">帐号</label>
+        <input id="inp-alias" name="user_alias" type="text" size="24" maxlength="60" value="邮箱/手机号">
+      </div> 
+      <div class="item"> 
+        <label for="inp-pwd">密码</label>
+        <input id="inp-pwd" name="user_passwd" type="password" size="10" maxlength="20" value="">
+      </div> 
+
+      <div class="item">没有豆瓣帐号？<a href="https://www.douban.com/accounts/register">注册豆瓣</a></div>
+      <div class="submit">
+        <input type="submit" name="confirm" value="授权">
+        <input type="button" value="拒绝" onclick="javascript:document.forms['refuse_form'].submit();">
+      </div> 
+    </form> 
+    </div>
+  </div>
+
+<script>
+;(function(doc){
+var $ = function(id) { return doc.getElementById(id); };
+var placeholder = '邮箱/手机号';
+var alias = $('inp-alias'), password = $('inp-pwd');
+    alias.onfocus = function(){
+      if ( this.value == placeholder ) {
+        this.value = '';
+        this.style.color = '#000';
+      }
+    };
+    alias.onblur = function(){
+      if (!this.value) {
+        this.value = placeholder;
+        this.style.color = '#ccc';
+      }
+    };
+
+  if (alias.value == placeholder) {
+    alias.style.color = '#ccc';
+  } else if(password.value === '') {
+    password.focus();
+  }
+
+})(document);
+
+
+</script>
+</body>
+</html>

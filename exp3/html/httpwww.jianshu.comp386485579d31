@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<!--[if IE 6]><html class="ie lt-ie8"><![endif]-->
+<!--[if IE 7]><html class="ie lt-ie8"><![endif]-->
+<!--[if IE 8]><html class="ie ie8"><![endif]-->
+<!--[if IE 9]><html class="ie ie9"><![endif]-->
+<!--[if !IE]><!--> <html> <!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"1255494d3a","applicationID":"15702971","transactionName":"e1daR0JWVV9RER9ZWkxdRxxDUVZE","queueTime":17,"applicationTime":123,"agent":""}</script>
+<script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[(new Date).getTime()].concat(u(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(2),u=t(3),c=t("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var s=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],p="api-",l=p+"ixn-";a(s,function(t,e){f[e]=o(p+e,!0,"api")}),f.addPageAction=o(p+"addPageAction",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var d=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[Date.now(),t,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{c.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){d[e]=o(l+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,(new Date).getTime()])}},{}],2:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],3:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?u(t,a,i):i()}function n(n,r,o){t&&t(n,r,o);for(var i=e(o),a=l(n),u=a.length,c=0;c<u;c++)a[c].apply(i,r);var s=f[m[n]];return s&&s.push([w,n,r,i]),i}function p(t,e){g[t]=l(t).concat(e)}function l(t){return g[t]||[]}function d(t){return s[t]=s[t]||o(n)}function v(t,e){c(t,function(t,n){e=e||"feature",m[n]=e,e in f||(f[e]=[])})}var g={},m={},w={on:p,emit:n,get:d,listeners:l,context:e,buffer:v};return w}function i(){return new r}var a="nr@context",u=t("gos"),c=t(2),f={},s={},p=e.exports=o();p.backlog=f},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!h++){var t=y.info=NREUM.info,e=s.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){c(m,function(e,n){t[e]||(t[e]=n)});var n="https"===g.split(":")[0]||t.sslForHttp;y.proto=n?"https://":"http://",u("mark",["onload",a()],null,"api");var r=s.createElement("script");r.src=y.proto+t.agent,e.parentNode.insertBefore(r,e)}}}function o(){"complete"===s.readyState&&i()}function i(){u("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var u=t("handle"),c=t(2),f=window,s=f.document,p="addEventListener",l="attachEvent",d=f.XMLHttpRequest,v=d&&d.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:d,REQ:f.Request,EV:f.Event,PR:f.Promise,MO:f.MutationObserver},t(1);var g=""+location,m={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-974.min.js"},w=d&&v&&v[p]&&!/CriOS/.test(navigator.userAgent),y=e.exports={offset:a(),origin:g,features:{},xhrWrappable:w};s[p]?(s[p]("DOMContentLoaded",i,!1),f[p]("load",r,!1)):(s[l]("onreadystatechange",o),f[l]("onload",r)),u("mark",["firstbyte",a()],null,"api");var h=0},{}]},{},["loader"]);</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="description"  content="娱乐八卦·张靓颖：世界欠你们家一枚奥斯卡金奖 作者：语不惜 这种自打自脸，自圆其说的炒作实在高明！那方是丈母娘放猛料，手撕女婿！这方，张靓颖在成都歌迷见面会上一边梨花带雨的承诺自己的家事自己会私下解决，却一边又利用生日宴，上演一出合家欢的戏码。这，到底是卓伟利用了张妈，还是张妈拿卓伟当了炮灰？玩鹰的被鹰啄了，也是醉了！你呢？你是否有被玩了一圈的赶脚？点击阅读全文 创业·为什么互联网创业公司要选址在北京？ 作者：Brooklyn_peng 在北京这样2000多万人的大都市生活和工作过的人都知道，大城市的生活节奏快，工作压力大，房价虚高成为人们不断吐槽的重点。而就在这样的大环境下，有一群不愿...">
+  <meta property="wb:webmaster" content="294ec9de89e7fadb" />
+  <meta property="qc:admins" content="104102651453316562112116375" />
+  <meta property="qc:admins" content="11635613706305617" />
+  <meta property="qc:admins" content="1163561616621163056375" />
+  <meta name="google-site-verification" content="cV4-qkUJZR6gmFeajx_UyPe47GW9vY6cnCrYtCHYNh4" />
+  <meta name="google-site-verification" content="HF7lfF8YEGs1qtCE-kPml8Z469e2RHhGajy6JPVy5XI" />
+  <meta http-equiv="mobile-agent" content="format=html5; url=http://www.jianshu.com/p/386485579d31">
+    <!--  Meta for Smart App Banner -->
+  <meta name="apple-itunes-app" content="app-id=888237539, app-argument=jianshu://notes/6286595">
+  <!-- End -->
+
+  <!--  Meta for Twitter Card -->
+  <meta content="summary" property="twitter:card">
+  <meta content="@jianshucom" property="twitter:site">
+  <meta content="简书晚报161012——《张靓颖：世界欠你们家一枚奥斯卡金奖》" property="twitter:title">
+  <meta content="娱乐八卦·张靓颖：世界欠你们家一枚奥斯卡金奖 作者：语不惜 这种自打自脸，自圆其说的炒作实在高明！那方是丈母娘放猛料，手撕女婿！这方，张靓颖在成都歌迷见面会上一边梨花带雨的承诺自己的家事自己会私下解决，却一边又利用生日宴，上演一出合家欢的戏码。这，到底是卓伟利用了张妈，还是张妈拿卓伟当了炮灰？玩鹰的被鹰啄了，也是醉了！你呢？你是否有被玩了一圈的赶脚？点击阅读全文 创业·为什么互联网创业公司要选址在北京？ 作者：Brooklyn_peng 在北京这样2000多万人的大都市生活和工作过的人都知道，大城市的生活节奏快，工作压力大，房价虚高成为人们不断吐槽的重点。而就在这样的大环境下，有一群不愿..." property="twitter:description">
+  <meta content="http://www.jianshu.com/p/386485579d31" property="twitter:url">
+  <!-- End -->
+
+  <!--  Meta for OpenGraph -->
+  <meta property="fb:app_id" content="865829053512461">
+  <meta property="og:site_name" content="简书">
+  <meta property="og:title" content="简书晚报161012——《张靓颖：世界欠你们家一枚奥斯卡金奖》">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="http://www.jianshu.com/p/386485579d31">
+  <meta property="og:description" content="娱乐八卦·张靓颖：世界欠你们家一枚奥斯卡金奖 作者：语不惜 这种自打自脸，自圆其说的炒作实在高明！那方是丈母娘放猛料，手撕女婿！这方，张靓颖在成都歌迷见面会上一边梨花带雨的承诺自己的家事自己会私...">
+  <!-- End -->
+
+  <!--  Meta for Facebook Applinks -->
+  <meta property="al:ios:url" content="jianshu://notes/6286595" />
+  <meta property="al:ios:app_store_id" content="888237539" />
+  <meta property="al:ios:app_name" content="简书" />
+
+  <meta property="al:android:url" content="jianshu://notes/6286595" />
+  <meta property="al:android:package" content="com.jianshu.haruki" />
+  <meta property="al:android:app_name" content="简书" />
+  <!-- End -->
+
+  <title>简书晚报161012——《张靓颖：世界欠你们家一枚奥斯卡金奖》 - 简书</title>
+  <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="ntjxa76MJnSShS8HplNld3C3zw8pmzXoBAyakaWZp1+t/tsHsPIo6FJRarnJ+fN9aamOycFU8UtrwXCc6HT3tQ==" />
+  <!--[if lte IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <link rel="stylesheet" media="all" href="http://cdn-qn0.jianshu.io/assets/base-fcbb465e0d570eff94222aef0113921f.css" />
+
+    <link rel="stylesheet" media="all" href="http://cdn-qn0.jianshu.io/assets/reading-note-cf8cd3159d6a16989a79274ab0963d55.css" />
+  <link rel="stylesheet" media="all" href="http://cdn-qn0.jianshu.io/assets/base-read-mode-9b4a364d3a94a577397974de707192a5.css" />
+  <script src="http://cdn-qn0.jianshu.io/assets/modernizr-613ea63b5aa2f0e2a1946e9c28c8eedb.js"></script>
+  <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+  <!--[if IE 8]><link rel="stylesheet" media="all" href="http://cdn-qn0.jianshu.io/assets/scaffolding/for_ie-7f1c477ffedc13c11315103e8787dc6c.css" /><![endif]-->
+  <!--[if lt IE 9]><link rel="stylesheet" media="all" href="http://cdn-qn0.jianshu.io/assets/scaffolding/for_ie-7f1c477ffedc13c11315103e8787dc6c.css" /><![endif]-->
+  <link href="http://baijii-common.b0.upaiyun.com/icons/favicon.ico" rel="icon">
+      <link rel="apple-touch-icon-precomposed" href="http://cdn-qn0.jianshu.io/assets/apple-touch-icons/57-b426758a1fcfb30486f20fd073c3b8ec.png" sizes="57x57" />
+      <link rel="apple-touch-icon-precomposed" href="http://cdn-qn0.jianshu.io/assets/apple-touch-icons/72-feca4b183b9d29fd188665785dc7a7f1.png" sizes="72x72" />
+      <link rel="apple-touch-icon-precomposed" href="http://cdn-qn0.jianshu.io/assets/apple-touch-icons/76-ba757f1ad3421192ce7192170393d2b0.png" sizes="76x76" />
+      <link rel="apple-touch-icon-precomposed" href="http://cdn-qn0.jianshu.io/assets/apple-touch-icons/114-8dae53b3bcea3f06bb139e329d1edab3.png" sizes="114x114" />
+      <link rel="apple-touch-icon-precomposed" href="http://cdn-qn0.jianshu.io/assets/apple-touch-icons/120-fa315ee0177dba4c55d4f66d4129b47f.png" sizes="120x120" />
+      <link rel="apple-touch-icon-precomposed" href="http://cdn-qn0.jianshu.io/assets/apple-touch-icons/152-052f5799bec8fb3aa624bdc72ef5bd1d.png" sizes="152x152" />
+
+</head>
+
+<body class="post output zh cn reader-day-mode reader-font2" data-js-module="note-show" data-locale="zh-CN">
+  
+  <div class="navbar navbar-jianshu shrink">
+  <div class="dropdown">
+    <a class="dropdown-toggle logo" id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="javascript:void(0)">
+      简
+    </a>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+      <li><a href="/"><i class="fa fa-home"></i> 首页</a></li>
+      <li><a href="/collections"><i class="fa fa-th"></i> 专题</a></li>
+    </ul>
+  </div>
+</div>
+<div class="navbar-user">
+    <a class="login" data-signup-link="true" data-toggle="modal" href="/sign_up">
+      <i class="fa fa-user"></i> 注册
+</a>    <a class="login" data-signin-link="true" data-toggle="modal" href="/sign_in">
+      <i class="fa fa-sign-in"></i> 登录
+</a>    <a class="daytime set-view-mode pull-right" href="javascript:void(0)"><i class="fa fa-moon-o"></i></a>
+</div>
+<div class="navbar navbar-jianshu expanded">
+  <div class="dropdown">
+      <a class="active logo" role="button" data-original-title="个人主页" data-container="div.expanded" href="/">
+        <b>简</b><i class="fa fa-home"></i><span class="title">首页</span>
+</a>      <a data-toggle="tooltip" data-placement="right" data-original-title="专题" data-container="div.expanded" href="/collections">
+        <i class="fa fa-th"></i><span class="title">专题</span>
+</a>    <a class="ad-selector" href="/apps">
+      <i class="fa fa-mobile"></i><span class="title">下载手机应用</span>
+</a>    <div class="ad-container ">
+      <div class="ad-pop">
+        <img class="ad-logo" src="http://cdn-qn0.jianshu.io/assets/apple-touch-icons/114-8dae53b3bcea3f06bb139e329d1edab3.png" alt="114" />
+        <p class="ad-title">简书</p>
+        <p class="ad-subtitle">交流故事，沟通想法</p>
+        <img class="ad-qrcode" src="http://cdn-qn0.jianshu.io/assets/app-page/download-app-qrcode-053849fa25f9b44573ef8dd3c118a20f.png" alt="Download app qrcode" />
+        <div>
+          <a class="ad-link" href="https://itunes.apple.com/cn/app/jian-shu/id888237539?ls=1&amp;mt=8">iOS</a>·
+          <a class="ad-link" href="http://downloads.jianshu.io/apps/haruki/JianShu-1.11.2.apk">Android</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="nav-user">
+      <a href='#view-mode-modal' data-toggle='modal'><i class="fa fa-font"></i><span class="title">显示模式</span></a>
+
+      <a class="signin" data-signin-link="true" data-toggle="modal" data-placement="right" data-original-title="登录" data-container="div.expanded" href="/sign_in">
+        <i class="fa fa-sign-in"></i><span class="title">登录</span>
+</a>    </div>
+  </div>
+
+  
+    <div class="fixed-btn">
+    <a class="go-top hide-go-top" href="#"> <i class="fa fa-angle-up"></i></a>
+    <a class="qrcode" data-target="#bottom-qrcode" data-toggle="modal" href="javascript:void(0)"><i class="fa fa-qrcode"></i></a>
+    <a class="writer" href="/writer#/" data-toggle="tooltip" data-placement="left" title="写篇文章"><i class="fa fa-pencil"></i></a>
+    <!-- qrcode modal -->
+    <div id="bottom-qrcode" class="modal panel-modal hide fade" tabindex="-1" role="dialog" aria-hidden="true">
+      <h4>下载简书移动应用</h4>
+      <div class="panel-body"><img src="http://cdn-qn0.jianshu.io/assets/app-page/download-app-qrcode-053849fa25f9b44573ef8dd3c118a20f.png" alt="Download app qrcode" /></div>
+    </div>
+  </div>
+
+
+  <div id="show-note-container">
+    
+<div class="post-bg" id="flag">
+  <div class="wrap-btn">
+    <!-- Notebook and collections button upper left -->
+      <div class="article-related pull-left">
+          <a class="collection-menu-btn" data-toggle="modal" data-target="#collection-menu" href="javascript:void(null);">
+            <i class="fa fa-th"></i>
+</a>          <a class="notebooks-menu-btn" data-toggle="modal" data-target="#notebooks-menu" href="javascript:void(null);"><i class="fa fa-list-ul"></i></a>
+        <div class="related-avatar-group activities"></div>
+      </div>
+    <!-- ******* -->
+
+      <a class="login" data-signup-link="true" data-toggle="modal" href="/sign_up">
+    <i class="fa fa-user"></i> 注册
+</a>  <a class="login" data-signin-link="true" data-toggle="modal" href="/sign_in">
+    <i class="fa fa-sign-in"></i> 登录
+</a>
+
+    <!-- Buttons upper right -->
+    <!-- ******* -->
+  </div>
+
+  <div class="container">
+    <!-- Article activities for width under 768px -->
+    <div class="related-avatar-group activities"></div>
+      <div class="article">
+        <div class="preview">
+          <div class="author-info">
+              <div class="btn btn-small btn-success follow">
+    <a data-signin-link="true" data-toggle="modal" href="/sign_in"><i class="fa fa-plus"></i>  <span>添加关注</span></a>
+  </div>
+
+            <a class="avatar" href="/users/d9edcb44e2f2">
+              <img src="http://upload.jianshu.io/users/upload_avatars/568470/1314dea20b37.png?imageMogr/thumbnail/90x90/quality/100" alt="100" />
+</a>            <span class="label">
+                作者
+            </span>
+            <a class="author-name blue-link" href="/users/d9edcb44e2f2">
+              <span>简书日报</span>
+</a>              <span data-toggle='tooltip' data-original-title='最后编辑于 2016.10.12 17:47'>2016.10.12 17:47*</span>
+            <div>
+              <span>写了722146字</span>，<span>被42064人关注</span>，<span>获得了48271个喜欢</span>
+            </div>
+          </div>
+          <h1 class="title">简书晚报161012——《张靓颖：世界欠你们家一枚奥斯卡金奖》</h1>
+          <div class="meta-top">
+            <span class="wordage"></span>
+            <span class="views-count"></span>
+            <span class="comments-count"></span>
+            <span class="likes-count"></span>
+          </div>
+
+          <!-- Collection/Bookmark/Share for width under 768px -->
+          <div class="article-share"></div>
+          <!-- -->
+
+          <div class="show-content"><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/568470-b2597284fc5742d5.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/568470-b2597284fc5742d5.jpg?imageMogr2/auto-orient/strip" data-image-slug="b2597284fc5742d5" data-width="1280" data-height="640"><br><div class="image-caption"></div>
+</div><p>娱乐八卦·<a href="http://www.jianshu.com/p/4463c1b659a6" target="_blank">张靓颖：世界欠你们家一枚奥斯卡金奖</a></p><p>作者：<a href="http://www.jianshu.com/users/6d2e8e20ad9f" target="_blank">语不惜</a><br></p><blockquote>
+<p>这种自打自脸，自圆其说的炒作实在高明！<br></p>
+<p>那方是丈母娘放猛料，手撕女婿！这方，张靓颖在成都歌迷见面会上一边梨花带雨的承诺自己的家事自己会私下解决，却一边又利用生日宴，上演一出合家欢的戏码。</p>
+<p>这，到底是卓伟利用了张妈，还是张妈拿卓伟当了炮灰？</p>
+<p>玩鹰的被鹰啄了，也是醉了！</p>
+<p>你呢？你是否有被玩了一圈的赶脚？</p>
+<p><a href="http://www.jianshu.com/p/4463c1b659a6" target="_blank">点击阅读全文</a></p>
+</blockquote><p><br></p><p>创业·<a href="http://www.jianshu.com/p/308a94e8b70c" target="_blank">为什么互联网创业公司要选址在北京？</a></p><p>作者：<a href="http://www.jianshu.com/users/54e16587a0d2" target="_blank">Brooklyn_peng</a><br></p><blockquote>
+<p>在北京这样2000多万人的大都市生活和工作过的人都知道，大城市的生活节奏快，工作压力大，房价虚高成为人们不断吐槽的重点。而就在这样的大环境下，有一群不愿意被每日机械式枯燥乏味的工作所压迫的青年才俊，他们希望改变当前的生活工作状态去追寻自己曾经的梦想，并通过自己的奋斗在北京安家立命。因此，我们看到有越来越多的放弃在各大互联网公司高薪酬的职位，有企业高管，也有产品，技术乃至市场销售人员，他们纷纷投身到这股创业潮流中。<br></p>
+<p><a href="http://www.jianshu.com/p/308a94e8b70c" target="_blank">点击阅读全文</a></p>
+</blockquote><p><br></p><p>财经投资理财·<a href="http://www.jianshu.com/p/107790c5c32f" target="_blank">21城房地产告急，不买房我们还剩什么可以投资的？</a></p><p>签约作者：<a href="http://www.jianshu.com/users/a5733c5de6a3" target="_blank">慕容随风</a><br></p><blockquote>
+<p>为未来的大额固定开支做准备。什么叫未来的大额固定开支呢？笔者认为，假设你在这个阶段已经有了房子，那么你未来的大额固定开支就是买汽车或者孩子上学的改善性住房置换，面对这样的大额开支，一般人是很难一次性支付的，需要一个长期的储备，因此，你可以考虑存一些定额的中等收益理财，比如说银行的理财产品，比如说保险公司的万能险产品，或者直接是债券型低风险的基金也都可以考虑。<br></p>
+<p><a href="http://www.jianshu.com/p/107790c5c32f" target="_blank">点击阅读全文</a></p>
+</blockquote><p><br></p><p>上班这点事儿·<a href="http://www.jianshu.com/p/88eecb2ebe2c" target="_blank">跨部门合作的罪与罚</a></p><p>作者：<a href="http://www.jianshu.com/users/a60533eacb3a" target="_blank">刘波派</a><br></p><blockquote>
+<p><b>这件事情的责任方是谁？没有完成谁的绩效会损失？在合作中，对方的角色是什么，应该如何与之对话？如果协作方没有完成，该如何促使其完成，在完成的路上，责任方又该承担什么呢？</b><br></p>
+<p>这些问题是跨部门合作中无比逃避的必经思考。想明白了，就能抓住和不同部门合作时该怎样出牌，力保自身任务的完成的诀窍。</p>
+<p><b>要谨记的是：在跨部门间合作时，如果责任方是自己，任何环节（包括交付给其他部门完成之事）你都不能做甩手掌柜。因为你才是任务失败的真正承担者。</b></p>
+<p><a href="http://www.jianshu.com/p/88eecb2ebe2c" target="_blank">点击阅读全文</a></p>
+</blockquote><p><br></p><p>人物·<a href="http://www.jianshu.com/p/00a9867d63e1" target="_blank">安杰依·瓦伊达：把波兰国家史扛在肩上的电影大师</a></p><p>作者：<a href="http://www.jianshu.com/users/af4d65c1f5ed" target="_blank">巴塞电影</a><br></p><blockquote>
+<p>瓦伊达在重现惨案后用数十秒的黑屏祭奠逝者，坦露着一个有良知、有时代责任感的艺术家在回首灾难时的勇气和悲天悯人的大情怀。瓦伊达认为“这部电影一定能唤起每一个人沉睡的心灵”。“在某种意义上，我把这部电影看成是那个时代波兰电影学院的验尸报告。”<br></p>
+<p><a href="http://www.jianshu.com/p/00a9867d63e1" target="_blank">点击阅读全文</a></p>
+</blockquote><p><br></p><p>生活家·<a href="http://www.jianshu.com/p/cc208a93440b" target="_blank">喝不出咖啡的好坏，不是你的问题</a></p><p>作者：<a href="http://www.jianshu.com/users/946c4ca55bb6" target="_blank">企鹅吃喝指南</a><br></p><blockquote>
+<p>卡布奇诺可能是最能喝出咖啡师能力的加奶饮料。<br></p>
+<p>正确的卡布奇诺大小应该是150~180ml，使用一份浓缩咖啡，加入打发40~50%的热牛奶。牛奶的温度尽可能维持在55~60度。<b>一来可以喝到牛奶的香甜、二来是舒服的饮用温度，不至于烫嘴～</b></p>
+<p>细腻的奶泡，会让口感变得更加绵密醇厚、甜感被很好地激发，当然，如果有独特的风味，那就更棒了！</p>
+<p><a href="http://www.jianshu.com/p/cc208a93440b" target="_blank">点击阅读全文</a></p>
+</blockquote><p><br></p><p>体育·<a href="http://www.jianshu.com/p/31a47169ee61" target="_blank">国足失利，不必“蓝瘦”，也不要“香菇”</a></p><p>作者：<a href="http://www.jianshu.com/users/d0048e1aca21" target="_blank">流浪在逃离</a><br></p><blockquote>
+<p>记得当年面对资本“逼宫”，时任足协主席阎世铎的一句话是很有道理的：“我个人可以辞职，包括我整个班子都可以辞职，但是你们要记住，中国足协永远是中国足球的领导。”最终所谓的“逼宫”，无疾而终。<br></p>
+<p>蔡振华从内心来说，他并不关心中国足球的好与坏，好了是政绩，不好也无所谓，最多换个单位罢了。而难的是，即使他不干足协主席了，下一任似乎也没什么多大希望。</p>
+<p><a href="http://www.jianshu.com/p/31a47169ee61" target="_blank">点击阅读全文</a></p>
+</blockquote><p><a href="http://www.jianshu.com/p/d62a9e99c970" target="_blank">影视天堂×人物联合征文公告 ︳影光声色中的人物剪影</a><br></p><p>私信官方微博@简书或在简书公众号（jianshuio）后台回复“简书小明”，获得简书小明微信号，进入丰富多彩的简书社群。</p><p>专题主编仍在招募中，对博物感兴趣的盆友们快来联系小明吧~</p></div>
+        </div>
+      </div>
+
+      <div class="visitor_edit">
+        <!-- further readings -->
+        <div id="further-readings" data-user-slug="" data-user-nickname="">
+          <div id="further-reading-line" class="hide further-reading-line"></div>
+          <ul id="further-readings-list" class="reading-list unstyled"></ul>
+          <div id="further-reading-new" class="reading-edit">
+              <a data-signin-link="true" data-toggle="modal" href="/sign_in">
+                <i class="fa fa-plus-circle"></i> 推荐拓展阅读
+</a>            <div id="further-reading-form"></div>
+          </div>
+        </div>
+        <div class="pull-right">
+          <!-- copyright -->
+          <div class="author-copyright pull-right" data-toggle="tooltip" data-html="true" title="转载请联系作者获得授权，并标注“简书作者”。">
+            <a><i class="fa fa-copyright"></i> 著作权归作者所有</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reward / Support Author -->
+        <div class="support-author">
+          <p>请送我一个好梦唷。</p>
+            <a class="btn btn-pay" data-toggle="modal" href="#pay-modal">¥ 打赏支持</a>
+          <div class="avatar-list"></div>
+        </div>
+
+      <!-- article meta bottom -->
+      <div class="meta-bottom clearfix">
+        <!--  Like Button -->
+        <div class="like ">
+            <div class="like-button">
+              <a id="like-note" class="like-content" data-signin-link="true" data-toggle="modal" href="/sign_in">
+                <i class="fa fa-heart-o"></i>  喜欢
+</a></div>          <span id="likes-count" data-toggle="tooltip" data-placement="right" title="查看所有喜欢的用户">
+            <i class="fa fa-spinner fa-pulse"></i>
+</span>        </div>
+        <!--  share group -->
+        <div class="share-group pull-right">
+          <a href="javascript:void((function(s,d,e,r,l,p,t,z,c){var%20f=&#39;http://v.t.sina.com.cn/share/share.php?appkey=1881139527&#39;,u=z||d.location,p=[&#39;&amp;url=&#39;,e(u),&#39;&amp;title=&#39;,e(t||d.title),&#39;&amp;source=&#39;,e(r),&#39;&amp;sourceUrl=&#39;,e(l),&#39;&amp;content=&#39;,c||&#39;gb2312&#39;,&#39;&amp;pic=&#39;,e(p||&#39;&#39;)].join(&#39;&#39;);function%20a(){if(!window.open([f,p].join(&#39;&#39;),&#39;mb&#39;,[&#39;toolbar=0,status=0,resizable=1,width=440,height=430,left=&#39;,(s.width-440)/2,&#39;,top=&#39;,(s.height-430)/2].join(&#39;&#39;)))u.href=[f,p].join(&#39;&#39;);};if(/Firefox/.test(navigator.userAgent))setTimeout(a,0);else%20a();})(screen,document,encodeURIComponent,&#39;&#39;,&#39;&#39;,&#39;http://cwb.assets.jianshu.io/notes/images/6286595/weibo/image_626afd7abca9.jpg&#39;, &#39;推荐 简书日报 的文章《简书晚报161012——《张靓颖：世界欠你们家一枚奥斯卡金奖》》（ 分享自 @简书 ）&#39;,&#39;http://www.jianshu.com/p/386485579d31&#39;,&#39;页面编码gb2312|utf-8默认gb2312&#39;));" data-name="weibo">
+            <i class="fa fa-weibo"></i><span>分享到微博</span>
+          </a>
+          <a data-toggle="modal" href="#share-weixin-modal" data-name="weixin">
+            <i class="fa fa-weixin"></i><span>分享到微信</span>
+          </a>
+          <div class="more">
+            <a href="javascript:void(0)" data-toggle="dropdown">更多分享<i class="fa fa-caret-down"></i></a>
+            <ul class="dropdown-menu arrow-top">
+                <li><a href="http://cwb.assets.jianshu.io/notes/images/6286595/weibo/image_626afd7abca9.jpg" target="_blank" data-name="changweibo"><i class="fa fa-arrow-circle-o-down"></i> 下载长微博图片</a></li>
+                <li>
+                  <a data-name="tweibo" href="javascript:void(function(){var d=document,e=encodeURIComponent,r=&#39;http://share.v.t.qq.com/index.php?c=share&amp;a=index&amp;url=&#39;+e(&#39;http://www.jianshu.com/p/386485579d31&#39;)+&#39;&amp;title=&#39;+e(&#39;推荐 简书日报 的文章《简书晚报161012——《张靓颖：世界欠你们家一枚奥斯卡金奖》》（ 分享自 @jianshuio ）&#39;),x=function(){if(!window.open(r,&#39;tweibo&#39;,&#39;toolbar=0,resizable=1,scrollbars=yes,status=1,width=600,height=600&#39;))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();">
+                    <img src="http://baijii-common.b0.upaiyun.com/social_icons/32x32/tweibo.png" alt="Tweibo" /> 分享到腾讯微博
+</a>                </li>
+                <li>
+                  <a data-name="qzone" href="javascript:void(function(){var d=document,e=encodeURIComponent,r=&#39;http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=&#39;+e(&#39;http://www.jianshu.com/p/386485579d31&#39;)+&#39;&amp;title=&#39;+e(&#39;推荐 简书日报 的文章《简书晚报161012——《张靓颖：世界欠你们家一枚奥斯卡金奖》》&#39;),x=function(){if(!window.open(r,&#39;qzone&#39;,&#39;toolbar=0,resizable=1,scrollbars=yes,status=1,width=600,height=600&#39;))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();">
+                    <img src="http://baijii-common.b0.upaiyun.com/social_icons/32x32/qzone.png" alt="Qzone" /> 分享到QQ空间
+</a>                </li>
+                <li>
+                  <a data-name="twitter" href="javascript:void(function(){var d=document,e=encodeURIComponent,r=&#39;https://twitter.com/share?url=&#39;+e(&#39;http://www.jianshu.com/p/386485579d31&#39;)+&#39;&amp;text=&#39;+e(&#39;推荐 简书日报 的文章《简书晚报161012——《张靓颖：世界欠你们家一枚奥斯卡金奖》》（ 分享自 @jianshucom ）&#39;)+&#39;&amp;related=&#39;+e(&#39;jianshucom&#39;),x=function(){if(!window.open(r,&#39;twitter&#39;,&#39;toolbar=0,resizable=1,scrollbars=yes,status=1,width=600,height=600&#39;))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();">
+                    <img src="http://baijii-common.b0.upaiyun.com/social_icons/32x32/twitter.png" alt="Twitter" /> 分享到Twitter
+</a>                </li>
+                <li>
+                  <a data-name="facebook" href="javascript:void(function(){var d=document,e=encodeURIComponent,r=&#39;https://www.facebook.com/dialog/share?app_id=483126645039390&amp;display=popup&amp;href=http://www.jianshu.com/p/386485579d31&#39;,x=function(){if(!window.open(r,&#39;facebook&#39;,&#39;toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330&#39;))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();">
+                    <img src="http://baijii-common.b0.upaiyun.com/social_icons/32x32/facebook.png" alt="Facebook" /> 分享到Facebook
+</a>                </li>
+                <li>
+                  <a data-name="google_plus" href="javascript:void(function(){var d=document,e=encodeURIComponent,r=&#39;https://plus.google.com/share?url=&#39;+e(&#39;http://www.jianshu.com/p/386485579d31&#39;),x=function(){if(!window.open(r,&#39;google_plus&#39;,&#39;toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330&#39;))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();">
+                    <img src="http://baijii-common.b0.upaiyun.com/social_icons/32x32/google_plus.png" alt="Google plus" /> 分享到Google+
+</a>                </li>
+                <li>
+                  <a data-name="douban" href="javascript:void(function(){var d=document,e=encodeURIComponent,s1=window.getSelection,s2=d.getSelection,s3=d.selection,s=s1?s1():s2?s2():s3?s3.createRange().text:&#39;&#39;,r=&#39;http://www.douban.com/recommend/?url=&#39;+e(&#39;http://www.jianshu.com/p/386485579d31&#39;)+&#39;&amp;title=&#39;+e(&#39;简书晚报161012——《张靓颖：世界欠你们家一枚奥斯卡金奖》&#39;)+&#39;&amp;sel=&#39;+e(s)+&#39;&amp;v=1&#39;,x=function(){if(!window.open(r,&#39;douban&#39;,&#39;toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330&#39;))location.href=r+&#39;&amp;r=1&#39;};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})()">
+                    <img src="http://baijii-common.b0.upaiyun.com/social_icons/32x32/douban.png" alt="Douban" /> 分享到豆瓣
+</a>                </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modals -->
+      <div id="share-weixin-modal" class="modal hide fade share-weixin-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+  </div>
+  <div class="modal-body">
+    <h5>打开微信“扫一扫”，打开网页后点击屏幕右上角分享按钮</h5>
+  </div>
+</div>
+
+      
+      <div id="notebooks-menu" class="panel notebooks-menu arrow-top modal hide fade"><img class="loader-tiny" src="http://baijii-common.b0.upaiyun.com/loaders/tiny.gif" alt="Tiny" /></div>
+      <div id="collection-menu" class="panel collection-menu arrow-top modal hide fade"><img class="loader-tiny" src="http://baijii-common.b0.upaiyun.com/loaders/tiny.gif" alt="Tiny" /></div>
+      
+      <div id="likes-modal" class="modal modal_new support_list-modal fullscreen hide fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3>喜欢的用户</h3>
+      </div>
+      <div class="modal-body">
+        <ul class="unstyled users">
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+    <!-- Comments -->
+    <div id="comments" class="comment-list clearfix">
+        <div class="comment-head clearfix">
+          9条评论
+          <span class="order">
+            （
+            <a data-order="asc" class="active" href="javascript:void(0)">按时间正序</a>·
+            <a data-order="desc" href="javascript:void(0)">按时间倒序</a>·
+            <a data-order="likes_count" href="javascript:void(0)">按喜欢排序</a>
+            ）
+          </span>
+            <a class="goto-comment pull-right" data-signin-link="true" data-toggle="modal" href="/sign_in">
+              <i class="fa fa-pencil"></i>添加新评论
+</a>        </div>
+        <div id="comment-list">
+          <img class="loader-tiny" src="http://baijii-common.b0.upaiyun.com/loaders/tiny.gif" alt="Tiny" />
+        </div>
+          <p class="signout-comment">
+    <a class="btn btn-info" data-signin-link="true" data-toggle="modal" href="/sign_in">
+      登录后发表评论
+</a>  </p>
+
+    </div>
+    <!-- -->
+
+  </div>
+
+  <script type='application/json' data-name='note'>
+    {"id":6286595,"abbr":"娱乐八卦·张靓颖：世界欠你们家一枚奥斯卡金奖 作者：语不惜 这种自打自脸，自圆其说的炒作实在高明！那方是丈母娘放猛料，手撕女婿！这方，张靓颖在成都歌迷见面会上一边梨花带雨的承诺自己的家事自己会私下解决，却一边又利用生日宴，上演一出合家欢的戏码。这，到底是卓伟利用了张妈，还是张妈拿卓伟当了炮灰？玩鹰的被鹰啄了，也是醉了！你呢？你是否有被玩了一圈的赶脚？点击阅读全文 创业·为什么互联网创业公司要选址在北京？ 作者：Brooklyn_peng 在北京这样2000多万人的大都市生活和工作过的人都知道，大城市的生活节奏快，工作压力大，房价虚高成为人们不断吐槽的重点。而就在这样的大环境下，有一群不愿...","slug":"386485579d31","url":"http://www.jianshu.com/p/386485579d31","image_url":"http://cwb.assets.jianshu.io/notes/images/6286595/weibo/image_626afd7abca9.jpg","wordage":1519,"has_further_readings":false,"views_count":14135,"likes_count":50,"comments_count":9,"rewards_total_count":0}
+  </script>
+
+  <script type='application/json' data-name='uuid'>
+    {"uuid":"53cb50cb-f206-4adb-8326-8a32110e95ad"}
+  </script>
+
+  <script type='application/json' data-name='author'>
+    {"id":568470,"nickname":"简书日报","slug":"d9edcb44e2f2","public_notes_count":358,"followers_count":42064,"total_likes_count":48271,"is_current_user":false,"is_signed_author":false}
+  </script>
+
+
+    <div class="include-collection">
+      <div class="content">
+        <h5>被以下专题收入，发现更多相似内容：</h5>
+        <ul id="all-collections" class="unstyled collections-list">
+            <li>
+              <a class="avatar" href="/collection/80e7d5d15e71"><img src="http://upload.jianshu.io/collections/images/244845/%E7%AE%80%E4%B9%A6%E6%97%A5%E6%8A%A5-%E4%B8%93%E9%A2%98.png?imageMogr2/auto-orient/strip|imageView2/2/w/180" alt="180" /></a>              <div class="collections-info">
+                <h5>
+                  <a href="/collection/80e7d5d15e71">简书日报</a>
+                </h5>
+                
+  <div class="btn btn-success follow">
+    <a data-signin-link="true" data-toggle="modal" href="/sign_in"><i class="fa fa-fw fa-plus"></i>  <span>添加关注</span></a>
+    <span>55.1K</span>
+  </div>
+
+                <p class="description">这里是简书日报，每天汇总当日好文章。欢迎大家多向日报君推荐喔~</p>
+                <p>
+                  <a class="blue-link" href="/collection/80e7d5d15e71">350篇文章</a> · 55196人关注
+                </p>
+              </div>
+            </li>
+            <li>
+              <a class="avatar" href="/collection/3sT4qY"><img src="http://upload.jianshu.io/collections/images/52/%E4%BB%8A%E6%97%A5%E7%9C%8B%E7%82%B9.png?imageMogr2/auto-orient/strip|imageView2/2/w/180" alt="180" /></a>              <div class="collections-info">
+                <h5>
+                  <a href="/collection/3sT4qY">今日看点</a>
+                </h5>
+                
+  <div class="btn btn-success follow">
+    <a data-signin-link="true" data-toggle="modal" href="/sign_in"><i class="fa fa-fw fa-plus"></i>  <span>添加关注</span></a>
+    <span>17.2K</span>
+  </div>
+
+                <p class="description">本专题仅让编辑在特殊情况下使用，入选文章将立刻上首页。绕过推荐队列。
+
+使用场景：
+- 突发事件的相关内容，需要立刻推首页
+-...</p>
+                <p>
+                  <a class="blue-link" href="/collection/3sT4qY">49466篇文章</a> · 17221人关注
+                </p>
+              </div>
+            </li>
+            <li>
+              <a class="avatar" href="/collection/a04da7e459c6"><img src="http://upload.jianshu.io/collections/images/267527/android.graphics.Bitmap_6846527.jpeg?imageMogr2/auto-orient/strip|imageView2/2/w/180" alt="180" /></a>              <div class="collections-info">
+                <h5>
+                  <a href="/collection/a04da7e459c6">简书早晚报</a>
+                </h5>
+                
+  <div class="btn btn-success follow">
+    <a data-signin-link="true" data-toggle="modal" href="/sign_in"><i class="fa fa-fw fa-plus"></i>  <span>添加关注</span></a>
+    <span>10</span>
+  </div>
+
+                <p class="description">精彩播报多看点！</p>
+                <p>
+                  <a class="blue-link" href="/collection/a04da7e459c6">128篇文章</a> · 10人关注
+                </p>
+              </div>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+  <!-- Modal -->
+    <div class="modal pay-modal text-center hide fade" id="pay-modal">
+  <div class="modal-header clearfix">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+  </div>
+  <form id="new_reward" class="new_reward" target="_blank" action="/notes/6286595/rewards" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="XSMH7YfK2liCkEfixRxmrjEmEW5gvcJvRqRuki+JO6BuBS2BibTUxEJEAlyqtvCkKDhQqIhyBswpaYSfYmRrSg==" />
+    <div class="modal-body">
+      <a href="/users/d9edcb44e2f2">
+        <div class="avatar"><img src="http://upload.jianshu.io/users/upload_avatars/568470/1314dea20b37.png?imageMogr/thumbnail/90x90/quality/100" alt="100" /></div>
+</a>      <p><i class="fa fa-quote-left pull-left"></i>请送我一个好梦唷。<i class="fa fa-quote-right pull-right"></i></p>
+      <div class="main-inputs text-left">
+        <div class="control-group">
+          <label for="reward_amount">打赏金额</label><i class="fa fa-yen"></i>
+          <input value="2.33" type="text" name="reward[amount_in_yuan]" id="reward_amount_in_yuan" />
+        </div>
+        <div class="control-group message">
+          <textarea placeholder="给Ta留言" name="reward[message]" id="reward_message">
+</textarea>
+        </div>
+      </div>
+      <div class="choose-pay text-left">
+        <h5>选择支付方式：</h5>
+        <div>
+          <label for="reward_channel_alipay">
+            <input type="radio" value="alipay" checked="checked" name="reward[channel]" id="reward_channel_alipay" />
+            <span class="alipay-bg"></span>
+</label>
+          
+          <label for="reward_channel_wx_pub_qr">
+            <input type="radio" value="wx_pub_qr" name="reward[channel]" id="reward_channel_wx_pub_qr" />
+            微信支付
+</label>        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button name="button" type="submit" class="btn btn-large btn-pay">立即支付</button>
+    </div>
+</form></div>
+
+    <div class="modal success-pay text-center hide fade" id="success-pay">
+  <div class="modal-header clearfix">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+  </div>
+  <div class="modal-body">
+    <h3><i class="icon-ok"></i>打赏成功</h3>
+    <img src="http://cdn-qn0.jianshu.io/assets/complete-pay-25426877089eb23bd76d9d0e6aad89c1.png" alt="Complete pay" />
+  </div>
+  <div class="modal-footer">
+    
+  </div>
+</div>
+
+</div>
+
+  </div>
+  <div id="flash" class="hide"></div>
+  
+  <div id="view-mode-modal" tabindex="-1" class="modal hide read-modal" aria-hidden="false" data-js-module='view-mode-modal'>
+    <div class="btn-group change-background" data-toggle="buttons-radio">
+      <a class="btn btn-daytime active" data-mode="day" href="javascript:void(null);">
+        <i class="fa fa-sun-o"></i>
+</a>      <a class="btn btn-nighttime " data-mode="night" href="javascript:void(null);">
+        <i class="fa fa-moon-o"></i>
+</a>    </div>
+    <div class="btn-group change-font" data-toggle="buttons-radio">
+      <a class="btn font " data-font="font1" href="javascript:void(null);">宋体</a>
+      <a class="btn font hei active" data-font="font2" href="javascript:void(null);">黑体</a>
+    </div>
+    <div class="btn-group change-locale" data-toggle="buttons-radio">
+      <a class="btn font active" data-locale="zh-CN" href="javascript:void(null);">简</a>
+      <a class="btn font hei " data-locale="zh-TW" href="javascript:void(null);">繁</a>
+    </div>
+  </div>
+
+  
+
+  <script src="http://cdn-qn0.jianshu.io/assets/base-ded41764c207f7ff545c28c670922d25.js"></script>
+  
+  <script src="http://cdn-qn0.jianshu.io/assets/reading-base-0028299ec0c770293c0f07e2f338b48f.js"></script>
+  <script src="http://cdn-qn0.jianshu.io/assets/reading/module_sets/note_show-1805bf39f59948b52870922039360dbb.js"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35169517-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<div style="display:none">
+  <script src="https://s11.cnzz.com/z_stat.php?id=1258679142&web_id=1258679142" language="JavaScript"></script>
+</div>
+
+<script>
+  (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      }
+      else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+</body>
+</html>

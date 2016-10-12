@@ -29,7 +29,7 @@ class myThread (threading.Thread):
 
 	def run(self):
 		print str(self.threadID) + "is running"
-		crawl()
+		crawl(self.threadID)
 		print self.threadID, "end"
 		
 
@@ -79,9 +79,9 @@ def add_page_to_folder(page, content):
 	f.write(content)
 	f.close
 
-def crawl():
+def crawl(id):
 	global count
-	while count < 1000 and ((not q.empty() and count > 1) or count < 2):
+	while count < 5000 and ((not q.empty() and count > 1) or count < 2):
 		if q.empty():
 			time.sleep(1)
 		else:
@@ -90,19 +90,21 @@ def crawl():
 			threadLock.release()
 			if url in crawled:
 				pass
+                        elif url[-3:]=='apk':
+                                pass
 			else:
-				print "Crawling" + url
+				print "Thread", id, "is crawling", url
+                                crawled.append(url)
 				content = get_page(url)
 				add_page_to_folder(url, content)
 				links = get_all_links(content, url)
 				union_queue(q, links)
-				crawled.append(url)
 				count += 1
 
 
 def main():
 	print "main thread is running"
-	q.put("http://www.sjtu.edu.cn")
+	q.put("http://www.jianshu.com")
 	for i in range(4):
 		t = myThread(i)
 		threads.append(t)

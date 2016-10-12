@@ -82,7 +82,9 @@ class IndexFiles(object):
                     file.close()
                     doc = Document()
                     doc.add(Field("name", filename, t1))
-                    doc.add(Field("path", root, t1))
+                    doc.add(Field("path", path, t1))
+                    doc.add(Field("url", url, lucene.Field.Store, lucene.Field.Index))
+                    doc.add(Field("title", title, lucene.Field.Store, lucene.Field.Index))
                     if len(contents) > 0:
                         doc.add(Field("contents", contents, t2))
                     else:
