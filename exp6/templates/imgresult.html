@@ -1,0 +1,37 @@
+$def with (result)
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--<meta name="referrer" content="never">-->
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+    <title>Biadu Search</title>
+
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <link rel="stylesheet" href="/static/assets/css/amazeui.min.css">
+    <link rel="stylesheet" href="/static/assets/css/app.css">
+</head>
+<body>
+    <div class="am-g" id="content">
+        <div class="am-u-sm-4"></div>
+        <div class="am-u-sm-8">
+            <h1>Search Result</h1>
+            <ul class="am-avg-sm-3 am-thumbnails">
+                $for data in result:
+                    <li>
+                        <img class="am-thumbnail" src=$data['imgurl'] alt=$data['title'] />
+                        <p><a href=$data['url']>$data['title']</a></p>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

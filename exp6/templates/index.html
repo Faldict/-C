@@ -1,0 +1,62 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+  <title>Biadu Search</title>
+
+  <!-- Set render engine for 360 browser -->
+  <meta name="renderer" content="webkit">
+
+  <!-- No Baidu Siteapp-->
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+  <style>
+  	  .index-bg {
+		  max-width: 100%;
+		  position: fixed;
+		  z-index: -10;
+	  }
+	  .searchbox {
+		  margin-top: 33%;
+		  margin-left: 10%;
+		  margin-right: 20%;
+	  }
+  </style>
+
+  <link rel="stylesheet" href="/static/assets/css/amazeui.min.css">
+  <link rel="stylesheet" href="/static/assets/css/app.css">
+</head>
+<body>
+<div id="wrapper">
+	<img class="index-bg" src="/static/img/background.jpg" />
+	<div class="am-container">
+	<div class="searchbox">
+		<h1 style="text-align:center;font-size:400%;color:#E3F3FF">Biadu Search</h1>
+		<form class="am-form" action="/result" method="get" name="searchform" id="searchForm">
+			<div class="am-input-group">
+				<input type="text" class="am-form-field" placeholder="Input what you want to search" name="query" />
+				<span class="am-input-group-btn">
+					<button type="submit" class="am-btn am-btn-primary" value="search">Search</button>
+				</span> <br>
+                <input type="radio" name="method" class="am-checkbox-inline" value="text">Text</input>
+                <input type="radio" name="method" class="am-checkbox-inline" value="img">Img</input>
+			</div>
+		</form>
+	</div>
+	</div>
+</div>
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="/static/assets/js/jquery.min.js"></script>
+<!--<![endif]-->
+<!--[if lte IE 8 ]>
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+<script src="/static/assets/js/amazeui.min.js"></script>
+</body>
+</html>
