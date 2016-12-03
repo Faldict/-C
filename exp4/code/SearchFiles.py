@@ -46,7 +46,7 @@ def run(searcher, analyzer):
             print 'path:', doc.get("path"), 'name:', doc.get("name"), 'url:', doc.get("url"), 'title:', doc.get("title")
 
 
-if __name__ == '__main__':
+def main():
 	STORE_DIR = "index"
 	lucene.initVM(vmargs=['-Djava.awt.headless=true'])
 	print 'lucene', lucene.VERSION
@@ -56,3 +56,6 @@ if __name__ == '__main__':
 	analyzer = WhitespaceAnalyzer(Version.LUCENE_CURRENT)
 	run(searcher, analyzer)
 	del searcher
+
+if __name__ == '__main__':
+    main()

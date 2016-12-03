@@ -8,6 +8,7 @@ __date__ = '2016-11-30'
 import cv2
 import numpy as np
 from matplotlib import pyplot as plt
+from math import pi, tan
 
 
 def selfCanny(img, minVal, maxVal):
@@ -24,9 +25,9 @@ def selfCanny(img, minVal, maxVal):
     for i in range(m):
         for j in range(n):
             theta = s_y[i][j] / s_x[i][j]
-            if abs(theta) == 1 & i > 0 & i < m - 1:
+            if (abs(theta) > tan(3 * pi / 8)) & i > 0 & i < m - 1:
                 thin_img[i][j] = gray_img[i][j] * (gray_img[i-1][j] < gray_img[i][j] & gray_img[i+1][j] < gray_img[i][j])
-            elif theta == 0 & j > 0 & j < n - 1:
+            elif (abs(theta) < tan(pi / 8)) & (j > 0) & (j < n - 1):
                 thin_img[i][j] = gray_img[i][j] * (gray_img[i][j-1] < gray_img[i][j] & gray_img[i][j+1] < gray_img[i][j])
             elif theta > 0:
                 thin_img[i][j] = gray_img[i][j] * (gray_img[i+1][j+1] < gray_img[i][j] & gray_img[i-1][j-1] < gray_img[i][j])
@@ -35,15 +36,20 @@ def selfCanny(img, minVal, maxVal):
             else:
                 thin_img[i][j] = gray_img[i][j]
     # Hysteresis Thresholding
-    for num in thin_img.flat:
-        if num > maxVal:
-            num = 1
-        elif num < minVal:
-            num = 0
+    # for i in range(m):
+    #     for j in range(n):
+    #         pixel = thin_img[i][j]
+    #         if pixel > maxVal:
+    #             pixel = 1
+    #         elif pixel < minVal:
+    #             pixel = 0
+    #         elif (i > 0) & (i < m-1) & (j > 0) & (j < n-1):
+    #             pixel = 1 * int((thin_img[i-1][j-1] > maxVal) & (thin_img[i-1][j] > maxVal) & (thin_img[i-1][j+1] > maxVal) & (thin_img[i][j-1] > maxVal) & (thin_img[i][j+1] > maxVal) & (thin_img[i+1][j-1] > maxVal) & (thin_img[i+1][j] > maxVal) & (thin_img[i+1][j+1] > maxVal))
     return thin_img
 
+
     # my canny edge detection function
-img = cv2.imread("3.jpg", 0)
+img = cv2.imread("1.jpg", 0)
 self_canny = selfCanny(img, 50, 200)
 plt.imshow(self_canny, cmap='gray')
 plt.show()

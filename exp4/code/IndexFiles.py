@@ -5,6 +5,7 @@ INDEX_DIR = "IndexFiles.index"
 import jieba
 import sys, os, lucene, threading, time
 from datetime import datetime
+import BeautifulSoup
 
 from java.io import File
 from org.apache.lucene.analysis.miscellaneous import LimitTokenCountAnalyzer
@@ -91,36 +92,20 @@ class IndexFiles(object):
                 doc.add(Field('name', filename, t1))
                 doc.add(Field('path', path, t1))
                 doc.add(Field('url', url, Field.Store.YES, Field.Index.NOT_ANALYZED))
-                doc.add(Field('title', title, Field.Store.YES, Field.Index.ANALYZED))
                 if len(contents)>0:
+                    soup=BeautifulSoup(contents)
+                    try:
+                        title = soup.title.text
+                        doc.add(Field('title', title, Field.Store.YES, Field.Index.ANALYZED))
+                    except Exception, e:
+                        doc.add(Field('title', 'none', Field.Store.YES, Field.Index.ANALYZED))
+                    contents = ''.join(soup.findAll(text=True))                       
                     doc.add(Field("contents", analysis(contents), t2))
                 else:
                     print "warning: no content in %s" % filename
                 writer.addDocument(doc)
             except Exception, e:
                 print "Failed in indexDocs:", e
-#        for root, dirnames, filenames in os.walk(root):
-#            for filename in filenames:
-#                if not filename.endswith('.txt'):
-#                    continue
-#                print "adding", filename
-#                try:
-#                    path = os.path.join(root, filename)
-#                    file = open(path)
-#                    contents = unicode(file.read(), 'gbk')
-#                    file.close()
-#                    doc = Document()
-#                    doc.add(Field("name", filename, t1))
-#                    doc.add(Field("path", path, t1))
-#                    doc.add(Field("url", url, lucene.Field.Store, lucene.Field.Index))
-#                    doc.add(Field("title", title, lucene.Field.Store, lucene.Field.Index))
-#                    if len(contents) > 0:
-#                        doc.add(Field("contents", contents, t2))
-#                    else:
-#                        print "warning: no content in %s" % filename
-#                    writer.addDocument(doc)
-#                except Exception, e:
-#                    print "Failed in indexDocs:", e
 
 if __name__ == '__main__':
     """
