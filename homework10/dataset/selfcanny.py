@@ -25,26 +25,25 @@ def selfCanny(img, minVal, maxVal):
     for i in range(m):
         for j in range(n):
             theta = s_y[i][j] / s_x[i][j]
-            if (abs(theta) > tan(3 * pi / 8)) & i > 0 & i < m - 1:
-                thin_img[i][j] = gray_img[i][j] * (gray_img[i-1][j] < gray_img[i][j] & gray_img[i+1][j] < gray_img[i][j])
-            elif (abs(theta) < tan(pi / 8)) & (j > 0) & (j < n - 1):
-                thin_img[i][j] = gray_img[i][j] * (gray_img[i][j-1] < gray_img[i][j] & gray_img[i][j+1] < gray_img[i][j])
+            if (abs(theta) > tan(3 * pi / 8)) and i > 0 and i < m - 1:
+                thin_img[i][j] = gray_img[i][j] * (grd[i-1][j] < grd[i][j] and grd[i+1][j] < grd[i][j])
+            elif (abs(theta) < tan(pi / 8)) and (j > 0) and (j < n - 1):
+                thin_img[i][j] = gray_img[i][j] * (grd[i][j-1] < grd[i][j] and grd[i][j+1] < grd[i][j])
             elif theta > 0:
-                thin_img[i][j] = gray_img[i][j] * (gray_img[i+1][j+1] < gray_img[i][j] & gray_img[i-1][j-1] < gray_img[i][j])
+                thin_img[i][j] = gray_img[i][j] * (grd[i+1][j+1] < grd[i][j] and grd[i-1][j-1] < grd[i][j])
             elif theta < 0:
-                thin_img[i][j] = gray_img[i][j] * (gray_img[i-1][j+1] < gray_img[i][j] & gray_img[i+1][j-1] < gray_img[i][j])
+                thin_img[i][j] = gray_img[i][j] * (grd[i-1][j+1] < grd[i][j] and grd[i+1][j-1] < grd[i][j])
             else:
                 thin_img[i][j] = gray_img[i][j]
     # Hysteresis Thresholding
-    # for i in range(m):
-    #     for j in range(n):
-    #         pixel = thin_img[i][j]
-    #         if pixel > maxVal:
-    #             pixel = 1
-    #         elif pixel < minVal:
-    #             pixel = 0
-    #         elif (i > 0) & (i < m-1) & (j > 0) & (j < n-1):
-    #             pixel = 1 * int((thin_img[i-1][j-1] > maxVal) & (thin_img[i-1][j] > maxVal) & (thin_img[i-1][j+1] > maxVal) & (thin_img[i][j-1] > maxVal) & (thin_img[i][j+1] > maxVal) & (thin_img[i+1][j-1] > maxVal) & (thin_img[i+1][j] > maxVal) & (thin_img[i+1][j+1] > maxVal))
+    for i in range(m):
+        for j in range(n):
+            if grd[i][j] > maxVal:
+                thin_img[i][j] = 255
+            elif grd[i][j] < minVal:
+                thin_img[i][j] = 0
+            elif (i > 0) and (i < m-1) and (j > 0) and (j < n-1):
+                thin_img[i][j] = 255 * int((grd[i-1][j-1] > maxVal) and (grd[i-1][j] > maxVal) and (grd[i-1][j+1] > maxVal) and (grd[i][j-1] > maxVal) and (grd[i][j+1] > maxVal) and (grd[i+1][j-1] > maxVal) and (grd[i+1][j] > maxVal) and (grd[i+1][j+1] > maxVal))
     return thin_img
 
 
