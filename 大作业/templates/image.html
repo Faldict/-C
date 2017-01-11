@@ -1,3 +1,4 @@
+$def with(text, img, result, count)
 <html>
 <head>
     <title>图片搜索结果</title>
@@ -6,16 +7,44 @@
 <body>
     <section class="grid">
         <div class="grid-sizer"></div>
-        <article class="grid-item">
-            <figure class="box">
-                <div class="title container">
-                    <h2><a data-name="test" href="www.baidu.com"></a></h2>
-                </div>
-                <div class="preview">
-                    <img src="test.jpg" alt="justtest" />
-                </div>
-            </figure>
-        </article>
+        <header class="grid-item">
+            <div class="container">
+                <h1>搜索结果</h1>
+                <h2>
+                    第十七组
+                    <a href="http://twitter.com/faldict">Twitter</a>
+                    <a href="http://weibo.com/u/3981798427">Weibo</a>
+                </h2>
+                <hr />
+                <p>
+                    您要搜索的图片是： $text
+                </p>
+                <figure class="example">
+                    <a href=$img target="_blank">
+                        <img src=$img width="120" height="90" alt="The image you want to search" />
+                    </a>
+                </figure>
+            </div>
+        </header>
+        $for i in range(count):
+            $res= result[i]
+            <article class="grid-item">
+                <figure class="example">
+                    <div class="title container">
+                        <h2>
+                            <a data-name=$res['title'] href=$res['url']>
+                                ::before
+                            </a>
+                        </h2>
+                    </div>
+                    <div class="preview">
+                        <img src=$res['imgurl'] width="120" height="90" alt=$res['title'] />
+                    </div>
+                    <figcaption class="output">
+                        $res['urlcontent2']
+                    </figcaption>
+                </figure>
+            </article>
     </section>
 </body>
 </html>
