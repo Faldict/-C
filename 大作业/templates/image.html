@@ -27,21 +27,19 @@ $def with(text, img, result, count)
             </div>
         </header>
         $for i in range(count):
-            $res= result[i]
+            $ res= result[i]
             <article class="grid-item">
                 <figure class="example">
                     <div class="title container">
                         <h2>
-                            <a data-name=$res['title'] href=$res['url']>
-                                ::before
-                            </a>
+                            <a data-name=$res['title'] href=$res['url']></a>
                         </h2>
                     </div>
                     <div class="preview">
-                        <img src=$res['imgurl'] width="120" height="90" alt=$res['title'] />
+                        <img src=$res['pic_url'] width="120" height="90" alt=$res['title'] />
                     </div>
-                    <figcaption class="output">
-                        $res['urlcontent2']
+                    <figcaptions>
+                        $:res['Content']
                     </figcaption>
                 </figure>
             </article>

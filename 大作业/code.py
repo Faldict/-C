@@ -1,8 +1,14 @@
 import web
 import cv2
-import lsh
-import search
-import os
+import sea
+import os, lucene
+import final
+
+
+import sys
+reload(sys)
+sys.setdefaultencoding( "utf-8" )
+
 
 render = web.template.render('templates/')
 
@@ -11,8 +17,6 @@ urls = (
     '/image', 'image'
 )
 
-# init dataset
-db = lsh.build_dataset()
 
 # deal with the upload img
 def upload(name, content):
@@ -38,14 +42,18 @@ class image:
         x = web.input(myfile={})
         name = x['myfile'].filename
         content = x['myfile'].value
-        print name
+        count, result = sea.func_img(text)
         if name != '' and content != '':
             img = upload(name, content)
-            return render.image(text, img)
+            result2 = final.search_img(img)
+            result = result + result2
+            count = count + len(result2)
+            return render.image(text, img, result, count)
         else:
-            return render.image(text, "")
+            return render.image(text, "", result, count)
 
 
 if __name__ == '__main__':
+    lucene.initVM(vmargs=['-Djava.awt.headless=true'])
     app = web.application(urls, globals())
     app.run()
