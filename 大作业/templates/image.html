@@ -1,8 +1,9 @@
-$def with(text, img, result, count)
+$def with(text, result, count)
 <html>
 <head>
     <title>图片搜索结果</title>
     <link href="/static/assets/css/style.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
 </head>
 <body>
     <section class="grid">
@@ -12,37 +13,46 @@ $def with(text, img, result, count)
                 <h1>搜索结果</h1>
                 <h2>
                     第十七组
-                    <a href="http://twitter.com/faldict">Twitter</a>
-                    <a href="http://weibo.com/u/3981798427">Weibo</a>
+                    <a href="index">返回首页</a>
                 </h2>
                 <hr />
+                <nav class="navbar navbar-light bg-faded">
+                    <form class="form-inline">
+                        <input class="form-control" type="text" placeholder=$text name="text" />
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </nav>
                 <p>
-                    您要搜索的图片是： $text
+                    您要搜索的是： <strong>$text</strong>
                 </p>
-                <figure class="example">
-                    <a href=$img target="_blank">
-                        <img src=$img width="120" height="90" alt="The image you want to search" />
-                    </a>
-                </figure>
             </div>
         </header>
         $for i in range(count):
             $ res= result[i]
             <article class="grid-item">
-                <figure class="example">
+                <figure class="box">
                     <div class="title container">
                         <h2>
                             <a data-name=$res['title'] href=$res['url']></a>
                         </h2>
                     </div>
                     <div class="preview">
-                        <img src=$res['pic_url'] width="120" height="90" alt=$res['title'] />
+                        <img src=$res['pic_url'] alt=$res['title'] />
                     </div>
                     <figcaptions>
-                        $:res['Content']
+                        $if res['price'] != '':
+                            <p>
+                                价格：<font color="red">$res['price']</font>
+                            </p>
+                        <p>
+                            $:res['description']
+                        </p>
                     </figcaption>
                 </figure>
             </article>
     </section>
+    <script src="static/bootstrap/js/jquery-3.1.1.min.js"></script>
+    <script src="static/assets/js/masonry.min.js"></script>
+    <script src="static/assets/js/animate.js"></script>
 </body>
 </html>

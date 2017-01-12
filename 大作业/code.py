@@ -14,6 +14,7 @@ render = web.template.render('templates/')
 
 urls = (
     '/', 'index',
+    '/index', 'index',
     '/image', 'image'
 )
 
@@ -36,6 +37,12 @@ class index:
 
 
 class image:
+    def GET(self):
+        query = web.input()
+        text = query['text']
+        count, result = sea.func_img(text)
+        return render.image(text, result, count)
+
     def POST(self):
         query = web.input()
         text = query['text']
@@ -46,11 +53,11 @@ class image:
         if name != '' and content != '':
             img = upload(name, content)
             result2 = final.search_img(img)
-            result = result + result2
+            result = result2 + result
             count = count + len(result2)
-            return render.image(text, img, result, count)
+            return render.image(text, result, count)
         else:
-            return render.image(text, "", result, count)
+            return render.image(text, result, count)
 
 
 if __name__ == '__main__':
