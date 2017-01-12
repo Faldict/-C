@@ -63,7 +63,7 @@ def work(searcher, analyzer,command, low=None,high=None):
                 result.append({"url": doc.get('url'), "Content": content, "pic_url": doc.get('pic_url'),
                                "title": doc.get('title'), "price": doc.get('price'),
                                "description": doc.get('description')})
-    result=sorted(result, key =lambda x: float(x["price"]),reverse=True)
+    result = sorted(result, key =lambda x: float(x["price"]),reverse=True)
 
     return match_count, result
 

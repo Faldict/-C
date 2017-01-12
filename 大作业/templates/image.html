@@ -1,9 +1,14 @@
-$def with(text, result, count)
+$def with(text, result, count, img)
 <html>
 <head>
     <title>图片搜索结果</title>
     <link href="/static/assets/css/style.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #F0F8FF
+        }
+    </style>
 </head>
 <body>
     <section class="grid">
@@ -18,12 +23,25 @@ $def with(text, result, count)
                 <hr />
                 <nav class="navbar navbar-light bg-faded">
                     <form class="form-inline">
-                        <input class="form-control" type="text" placeholder=$text name="text" />
+                        $if text == '':
+                            <input class="form-control" type="text" placeholder="search" name="text" />
+                        $else:
+                            <input class="form-control" type="text" placeholder=$text name="text" />
                         <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
                 </nav>
+                $if text != '':
+                    <p>
+                        您要搜索的是： <strong>$text</strong>
+                    </p>
+                $if img != '':
+                    <p>
+                        您要搜索的图片是:
+                    </p>
+                    <img src=$img alt="Search Image" />
+                <br />
                 <p>
-                    您要搜索的是： <strong>$text</strong>
+                    一共找到 <font color="blue">$count</font> 条结果
                 </p>
             </div>
         </header>

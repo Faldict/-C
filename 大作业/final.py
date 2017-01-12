@@ -46,7 +46,7 @@ def search_img(image):
     img = cv2.imread(image)
     vm_env = lucene.getVMEnv()
     vm_env.attachCurrentThread()
-    STORE_DIR = "index2"
+    STORE_DIR = "index"
     directory = SimpleFSDirectory(File(STORE_DIR))
     searcher = IndexSearcher(DirectoryReader.open(directory))
     analyzer = WhitespaceAnalyzer(Version.LUCENE_CURRENT)

@@ -41,23 +41,19 @@ class image:
         query = web.input()
         text = query['text']
         count, result = sea.func_img(text)
-        return render.image(text, result, count)
+        return render.image(text, result, count, '')
 
     def POST(self):
         query = web.input()
-        text = query['text']
         x = web.input(myfile={})
         name = x['myfile'].filename
         content = x['myfile'].value
-        count, result = sea.func_img(text)
-        if name != '' and content != '':
-            img = upload(name, content)
-            result2 = final.search_img(img)
-            result = result2 + result
-            count = count + len(result2)
-            return render.image(text, result, count)
-        else:
-            return render.image(text, result, count)
+
+        img = upload(name, content)
+        result = final.search_img(img)
+        count = len(result)
+        return render.image('', result, count, img)
+
 
 
 if __name__ == '__main__':
